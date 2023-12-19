@@ -19,5 +19,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('tampilanPemesanan');
 });
-Route::get('/mobil', [mobilcontroller::class,'index']);
+Route::get('/', [mobilcontroller::class,'index']);
 
