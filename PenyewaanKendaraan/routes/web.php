@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\mobilcontroller;
+use App\Http\Controllers\PembayaranController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,4 +21,5 @@ Route::get('/pemesanan', function () {
     return view('tampilanPemesanan');
 });
 Route::get('/mobil', [mobilcontroller::class,'index']);
+Route::get('/pembayaran', [PembayaranController::class, 'index']);
 
