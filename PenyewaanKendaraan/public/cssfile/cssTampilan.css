@@ -1,12 +1,9 @@
-html, body{
+.header{
   height: 100%;
   width: 100%;
-  position: fixed;
+
 
 }
-.global-container h1 {
-    text-align: center;
-  }
 .global-container{
   height: 100%;
   width: 100%;

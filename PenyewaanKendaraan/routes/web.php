@@ -3,7 +3,8 @@
 use App\Http\Controllers\mobilcontroller;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\motorController;
-
+use App\Http\Controllers\indexController;
+use App\Http\Controllers\PemesananController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,10 +20,10 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/pemesanan', function () {
-    return view('tampilanPemesanan');
+Route::get('/', function () {
+    return view('index');
 });
 Route::get('/mobil', [mobilcontroller::class,'index']);
 Route::get('/pembayaran', [PembayaranController::class, 'index']);
 Route::get('/motor', [motorController::class, 'index']);
-
+Route::get('/pemesanan', [PemesananController::class, 'index']);

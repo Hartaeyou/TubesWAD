@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\index;
 use Illuminate\Http\Request;
 
-class PemesananController extends Controller
+class indexController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view("pemesanan/tampilanPemesanan");
+        return view("index");
     }
 
     /**
@@ -33,7 +34,7 @@ class PemesananController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(index $index)
     {
         //
     }
@@ -41,7 +42,7 @@ class PemesananController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(index $index)
     {
         //
     }
@@ -49,7 +50,7 @@ class PemesananController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, index $index)
     {
         //
     }
@@ -57,7 +58,7 @@ class PemesananController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(index $index)
     {
         //
     }
