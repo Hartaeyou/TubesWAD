@@ -20,10 +20,12 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 Route::get('/mobil', [mobilcontroller::class,'index']);
 Route::get('/pembayaran', [PembayaranController::class, 'index']);
 Route::get('/motor', [motorController::class, 'index']);
 Route::get('/pemesanan', [PemesananController::class, 'index']);
+Route::get('/sesiLogin', [indexController::class, 'index']);
+Route::post('sesiLogin/login', [indexController::class, 'login']);

@@ -12,54 +12,27 @@ class indexController extends Controller
      */
     public function index()
     {
-        return view("index");
+        return view("sesiLogin/index");
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    function login(Request $request)
     {
-        //
-    }
+        $request->validate(
+            ["email"=>"required", "password"=>"required"],
+            ["email.required"=>"Email Wajib Diisi", "password.required"=>"Password Wajib Diisi"]
+        );
+        $logininfo=[
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+            "email"=> $request->email,
+            "password"=> $request->password,
+        ];
+        if(Auth::attempt($logininfo)) {
+            // autentikasi berhasil
+            return "hoho";
+        }
+        else {
+            return "hehe";
+        }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(index $index)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(index $index)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, index $index)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(index $index)
-    {
-        //
     }
 }
