@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class index extends Model
+class Admin extends Model
 {
-    use HasFactory;
+    public $table = "data_registrasi_admin";
 }
