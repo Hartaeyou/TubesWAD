@@ -34,6 +34,7 @@ Route::get('/motor', [motorController::class, 'index']);
 // dasheva
 Route::get('/mobil', [mobilcontroller::class,'index'])->name('mobil');
 Route::get('/lihatmobil', [mobilcontroller::class,'indexlihat'])->name('lihatmobil');
+Route::get('/detail', [mobilcontroller::class, 'detail' ])->name('detail');
 Route::get('/tambahmobil', [mobilcontroller::class,'indextambah'])->name('tambahmobil');
 Route::post('/tambahmobil-baru', [mobilcontroller::class,'store'])->name('tambahmobil-baru');
 

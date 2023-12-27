@@ -28,6 +28,11 @@ class mobilcontroller extends Controller
 
         
     }
+
+    public function detail()
+    {
+        return view("mobil/detailmobil");
+    }
     
 
     /**

@@ -65,6 +65,7 @@
                     <td>{{$m->warna_mobil}}</td>
                     <td>{{$m->plat_mobil}}</td>
                     <td>{{$m->mitra_mobil}}</td>
+                    <td><a href="detail" class="btn btn-primary">Detail</a></td>
                 </tr>
                 @endforeach
             </tbody>
