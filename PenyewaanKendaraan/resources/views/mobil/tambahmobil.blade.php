@@ -87,6 +87,16 @@
                                         {{ $message }}
                                     </div>
                                 @enderror
+                        <div class="d-grid gap-2 col-10 mx-auto">
+                            <label for="plat" class="form-label">Mitra Mobil</label>
+                            <input type="text" class="form-control" id="plat" name="mitra_mobil">
+                        </div>
+
+                        @error('content')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
 
                         <div class="d-grid gap-2 col-10 mx-auto mt-4">
                             <button type="submit" class="btn btn-primary">Tambah</button>

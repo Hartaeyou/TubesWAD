@@ -52,6 +52,7 @@ class mobilcontroller extends Controller
             $mobil=new Mobil();
             $mobil->nama_mobil = $request->nama_mobil;
             $mobil->brand_mobil = $request->brand_mobil;
+            $mobil->warna_mobil = $request->warna_mobil;
             $mobil->plat_mobil = $request->plat_mobil;
             $mobil->mitra_mobil = $request->mitra_mobil;
             $result= $mobil->save();
