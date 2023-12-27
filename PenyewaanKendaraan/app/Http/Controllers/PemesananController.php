@@ -29,7 +29,7 @@ class PemesananController extends Controller
             "tanggalMasuk" => "required",
         ]);
 
-        Pemesanan::create([
+        $tambah=Pemesanan::create([
             'nama' => $validatedData['nama'],
             'jenis_kendaraan' => $validatedData['jenisKendaraan'],
             'plat' => $validatedData['plat'],
@@ -37,8 +37,11 @@ class PemesananController extends Controller
             'tanggal_masuk' => $validatedData['tanggalMasuk'],
             'tanggal_keluar' => $validatedData['tanggalKeluar'],
         ]);
-
-        return back()->with('success', 'Pemesanan berhasil!');
+        if ($tambah){
+            return back()->with('success', 'Pemesanan berhasil!');
+        }else{
+            return back();
+        }
         
     }
     public function showTable(){

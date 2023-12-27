@@ -54,7 +54,7 @@
                             <label for="nama" class="form-label">Nama Mobil</label>
                             <input type="text" class="form-control" id="nama" name="nama_mobil">
                         </div>
-                        @error('content')
+                        @error('nama_mobil')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>

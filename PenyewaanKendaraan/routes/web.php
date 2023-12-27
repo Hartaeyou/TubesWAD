@@ -39,7 +39,7 @@ Route::post('/tambahmobil-baru', [tambahmobilcontroller::class,'store'])->name('
 
 //login register(farabi)
 Route::get('/', [AuthController::class, 'login'])->middleware('HaslogIn');
-Route::get('/registrasi', [AuthController::class, 'registrasi']);
+Route::get('/registrasi', [AuthController::class, 'registrasi'])->middleware('HaslogIn');
 Route::post('/register-user', [AuthController::class, 'registerUser'])->name('register-user');
 Route::post('login-user', [AuthController::class, 'loginUser'])->name("login-user");
 Route::get('/logout', [AuthController::class, 'logout']);
