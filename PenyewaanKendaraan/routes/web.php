@@ -35,4 +35,4 @@ Route::post('/register-user', [AuthController::class, 'registerUser'])->name('re
 Route::post('login-user', [AuthController::class, 'loginUser'])->name("login-user");
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware("islogIn");
 Route::get('/logout', [AuthController::class, 'logout']);
-Route::get('/tambahmobil', [tambahmobilcontroller::class,'index']);
+Route::get('/tambahmobil', [tambahmobilcontroller::class,'index'])->name('tambahmobil');
