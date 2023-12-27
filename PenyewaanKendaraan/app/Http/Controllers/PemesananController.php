@@ -42,7 +42,7 @@ class PemesananController extends Controller
         
     }
     public function showTable(){
-        $data= Pemesanan::all();
+        $data= Pemesanan::simplePaginate(4);
         return view('pemesanan.tablePemesanan',['pemesanans'=>$data]);
     }
 

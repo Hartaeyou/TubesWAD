@@ -7,9 +7,9 @@
 <link rel="stylesheet" href="{ URL('cssFile/tablePemesanan.css) }}">
 @endsection
 @section('content')
+<h1 class="d-flex justify-content-center">Table Pemesanan</h1>
 <div class="d-flex justify-content-center align-items-center" style="min-height: 35vh;">    
     <div class="container">
-        <h1 class="d-flex justify-content-center">Table Pemesanan</h1>
         <a class="btn btn-primary" href="pemesanan">+Tambah</a>
         <br><br>
         <table  class="table table-bordered">
@@ -43,6 +43,9 @@
             </tbody>
             @endforeach
         </table>
+        <div class="d-flex justify-content-end">
+            {{$pemesanans->links()}}
+        </div>
     </div>
 </div>
 
