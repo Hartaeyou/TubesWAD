@@ -52,7 +52,7 @@
         <div><p> </p></div>
         <div class="d-grid gap-2 col-3 mx-auto">
         <button type="button" class="btn btn-dark">Lihat</button>
-        <button type="button" class="btn btn-dark">Tambah</button>
+        <button type="submit" class="btn btn-dark" name = "tambah">Tambah</button>
         </div>
     </div>
 

@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Mobil;
+use App\Models\tambahmobil;
 use Illuminate\Http\Request;
 
-class mobilcontroller extends Controller
+class tambahmobilcontroller extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view("mobil/tampilanmobil");
+        //
+        return view("mobil/tambahmobil");
     }
 
     /**
@@ -34,7 +35,7 @@ class mobilcontroller extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Mobil $mobil)
+    public function show(tambahmobil $tambahmobil)
     {
         //
     }
@@ -42,7 +43,7 @@ class mobilcontroller extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Mobil $mobil)
+    public function edit(tambahmobil $tambahmobil)
     {
         //
     }
@@ -50,7 +51,7 @@ class mobilcontroller extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Mobil $mobil)
+    public function update(Request $request, tambahmobil $tambahmobil)
     {
         //
     }
@@ -58,7 +59,7 @@ class mobilcontroller extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Mobil $mobil)
+    public function destroy(tambahmobil $tambahmobil)
     {
         //
     }

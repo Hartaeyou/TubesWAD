@@ -6,6 +6,7 @@ use App\Http\Controllers\motorController;
 use App\Http\Controllers\PemesananController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\tambahmobilcontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,3 +35,4 @@ Route::post('/register-user', [AuthController::class, 'registerUser'])->name('re
 Route::post('login-user', [AuthController::class, 'loginUser'])->name("login-user");
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware("islogIn");
 Route::get('/logout', [AuthController::class, 'logout']);
+Route::get('/tambahmobil', [tambahmobilcontroller::class,'index']);
