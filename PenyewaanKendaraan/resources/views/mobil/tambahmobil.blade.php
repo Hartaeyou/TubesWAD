@@ -44,29 +44,29 @@
 
     <h1 style="text-align : center;">Tambah Data Mobil</h1>
     <div class="container" style="margin-top : 20px;">
-        <div class="d-grid gap-2 col-5 mx-auto">
+        <div class="d-grid gap-2 col-4 mx-auto">
     
         <div class="card">
             <div class="card-body">
                 <form>
-                    <div class="d-grid gap-2 col-9 mx-auto">
+                    <div class="d-grid gap-2 col-10 mx-auto">
                         <label for="nama" class="form-label">Nama Mobil</label>
                         <input type="text" class="form-control" id="nama">
                     </div>
-                    <div class="d-grid gap-2 col-9 mx-auto">
+                    <div class="d-grid gap-2 col-10 mx-auto">
                         <label for="brand" class="form-label">Brand Mobil</label>
                         <input type="text" class="form-control" id="brand">
                     </div>
-                    <div class="d-grid gap-2 col-9 mx-auto">
+                    <div class="d-grid gap-2 col-10 mx-auto">
                         <label for="warna" class="form-label">Warna Mobil</label>
                         <input type="text" class="form-control" id="warna">
                     </div>
-                    <div class="d-grid gap-2 col-9 mx-auto">
+                    <div class="d-grid gap-2 col-10 mx-auto">
                         <label for="plat" class="form-label">Plat Mobil</label>
                         <input type="text" class="form-control" id="plat">
                     </div>
-                    <div class="d-grid gap-2 col-9 mx-auto mt-4">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="d-grid gap-2 col-10 mx-auto mt-4">
+                        <button type="submit" class="btn btn-primary">Tambah</button>
                     </div>
                 </form>
             </div>
