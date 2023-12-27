@@ -35,6 +35,7 @@ Route::get('/motor', [motorController::class, 'index']);
 Route::get('/mobil', [mobilcontroller::class,'index'])->name('mobil');
 Route::get('/lihatmobil', [lihatmobilcontroller::class,'index'])->name('lihatmobil');
 Route::get('/tambahmobil', [tambahmobilcontroller::class,'index'])->name('tambahmobil');
+Route::post('/tambahmobil-baru', [tambahmobilcontroller::class,'store'])->name('tambahmobil-baru');
 
 //login register(farabi)
 Route::get('/', [AuthController::class, 'login'])->middleware('HaslogIn');

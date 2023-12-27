@@ -30,6 +30,28 @@ class tambahmobilcontroller extends Controller
     public function store(Request $request)
     {
         //
+        $validateData = $request->validate([
+            'nama_mobil' => 'required',
+            'brand_mobil' => 'required',
+            'warna_mobil' => 'required',
+            'plat_mobil' => 'required',
+            'mitra_mobil' => 'required'
+        ]);
+
+        $tambahmobil = tambahmobil::create([
+            'nama_mobil' => $validateData['nama_mobil'],
+            'brand_mobil' => $validateData['brand_mobil'],
+            'warna_mobil' => $validateData['warna_mobil'],
+            'plat_mobil' => $validateData['plat_mobil'],
+            'mitra_mobil' => $validateData['mitra_mobil'],
+        ]);
+
+        if($tambahmobil){
+            return back()->with("Success","bisa");
+        }
+        else{
+            return back()->with("Fail","gabisa");   
+        }
     }
 
     /**
