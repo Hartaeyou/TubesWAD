@@ -41,7 +41,7 @@ class AuthController extends Controller
             "email" => "required|unique:data_registrasi_admin",
             "password" => "required|min:8|max:12",
         ]);
-        $admin =new Admin();
+        $admin=new Admin();
         $admin->name = $request->name;
         $admin->email = $request->email;
         $admin->password = Hash::make($request->password);

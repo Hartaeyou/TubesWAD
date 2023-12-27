@@ -45,7 +45,7 @@ Route::get('/logout', [AuthController::class, 'logout']);
 
 // farabi
 Route::get('/pemesanan', [PemesananController::class, 'index']);
-Route::get('/formSubmit', [PemesananController::class, 'formSubmit'])->name('formSubmit');
+Route::post('/formSubmit', [PemesananController::class, 'formSubmit'])->name('formSubmit');
 
 // dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware("islogIn");
