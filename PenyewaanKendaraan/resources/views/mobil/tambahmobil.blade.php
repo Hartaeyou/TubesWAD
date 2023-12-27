@@ -29,7 +29,7 @@
                     <a class="nav-link" href="#">Pelanggan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Mobil</a>
+                    <a class="nav-link" href="{{ route("mobil") }}">Mobil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Motor</a>

@@ -51,8 +51,8 @@
         </div>
         <div><p> </p></div>
         <div class="d-grid gap-2 col-3 mx-auto">
-        <button type="button" class="btn btn-dark">Lihat</button>
-        <button type="submit" class="btn btn-dark btn-block" onclick="window.location='{{ route("tambahmobil") }}'">Tambah</button>
+        <button type="button" class="btn btn-dark" onclick="window.location='{{ route("lihatmobil") }}'">Lihat</button>
+        <button type="submit" class="btn btn-dark" onclick="window.location='{{ route("tambahmobil") }}'">Tambah</button>
         </div>
     </div>
 

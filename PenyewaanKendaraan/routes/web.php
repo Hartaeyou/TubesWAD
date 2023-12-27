@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\lihatmobilcontroller;
 use App\Http\Controllers\mobilcontroller;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\motorController;
@@ -25,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function (){
 //     return view('index');
 // });
-Route::get('/mobil', [mobilcontroller::class,'index']);
+Route::get('/mobil', [mobilcontroller::class,'index'])->name('mobil');
 Route::get('/pembayaran', [PembayaranController::class, 'index']);
 Route::get('/motor', [motorController::class, 'index']);
 Route::get('/pemesanan', [PemesananController::class, 'index']);
@@ -36,3 +37,4 @@ Route::post('login-user', [AuthController::class, 'loginUser'])->name("login-use
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware("islogIn");
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/tambahmobil', [tambahmobilcontroller::class,'index'])->name('tambahmobil');
+Route::get('/lihatmobil', [lihatmobilcontroller::class,'index'])->name('lihatmobil');
