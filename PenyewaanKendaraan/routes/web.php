@@ -26,15 +26,29 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function (){
 //     return view('index');
 // });
-Route::get('/mobil', [mobilcontroller::class,'index'])->name('mobil');
-Route::get('/pembayaran', [PembayaranController::class, 'index']);
+
+
+// isi aja punya siapa gatau
 Route::get('/motor', [motorController::class, 'index']);
-Route::get('/pemesanan', [PemesananController::class, 'index']);
+
+// dasheva
+Route::get('/mobil', [mobilcontroller::class,'index'])->name('mobil');
+Route::get('/lihatmobil', [lihatmobilcontroller::class,'index'])->name('lihatmobil');
+Route::get('/tambahmobil', [tambahmobilcontroller::class,'index'])->name('tambahmobil');
+
+//login register(farabi)
 Route::get('/', [AuthController::class, 'login'])->middleware('HaslogIn');
 Route::get('/registrasi', [AuthController::class, 'registrasi']);
 Route::post('/register-user', [AuthController::class, 'registerUser'])->name('register-user');
 Route::post('login-user', [AuthController::class, 'loginUser'])->name("login-user");
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware("islogIn");
 Route::get('/logout', [AuthController::class, 'logout']);
-Route::get('/tambahmobil', [tambahmobilcontroller::class,'index'])->name('tambahmobil');
-Route::get('/lihatmobil', [lihatmobilcontroller::class,'index'])->name('lihatmobil');
+
+// farabi
+Route::get('/pemesanan', [PemesananController::class, 'index']);
+Route::get('/formSubmit', [PemesananController::class, 'formSubmit'])->name('formSubmit');
+
+// dashboard
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware("islogIn");
+
+// Rismawan
+Route::get('/pembayaran', [PembayaranController::class, 'index']);
