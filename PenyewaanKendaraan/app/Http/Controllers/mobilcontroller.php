@@ -15,6 +15,18 @@ class mobilcontroller extends Controller
         return view("mobil/tampilanmobil");
     }
 
+    public function indexlihat()
+    {
+        //
+        return view("mobil/lihatmobil");
+    }
+    public function indextambah()
+    {
+        //
+        return view("mobil/tambahmobil");
+    }
+    
+
     /**
      * Show the form for creating a new resource.
      */
@@ -29,6 +41,27 @@ class mobilcontroller extends Controller
     public function store(Request $request)
     {
         //
+        {
+            $request->validate([
+                "nama_mobil" => "required",
+                "brand_mobil" => "required",
+                "warna_mobil" => "required",
+                "plat_mobil" => "required",
+                "mitra_mobil" => "required"
+            ]);
+            $mobil=new Mobil();
+            $mobil->nama_mobil = $request->nama_mobil;
+            $mobil->brand_mobil = $request->brand_mobil;
+            $mobil->plat_mobil = $request->plat_mobil;
+            $mobil->mitra_mobil = $request->mitra_mobil;
+            $result= $mobil->save();
+            if($result){
+                return back()->with("Success","Anda Telah Berhasil Registrasi");
+            }
+            else{
+                return back()->with("Fail","Anda Gagal Registrasi");   
+            }
+        }
     }
 
     /**

@@ -33,9 +33,9 @@ Route::get('/motor', [motorController::class, 'index']);
 
 // dasheva
 Route::get('/mobil', [mobilcontroller::class,'index'])->name('mobil');
-Route::get('/lihatmobil', [lihatmobilcontroller::class,'index'])->name('lihatmobil');
-Route::get('/tambahmobil', [tambahmobilcontroller::class,'index'])->name('tambahmobil');
-Route::post('/tambahmobil-baru', [tambahmobilcontroller::class,'store'])->name('tambahmobil-baru');
+Route::get('/lihatmobil', [mobilcontroller::class,'indexlihat'])->name('lihatmobil');
+Route::get('/tambahmobil', [mobilcontroller::class,'indextambah'])->name('tambahmobil');
+Route::post('/tambahmobil-baru', [mobilcontroller::class,'store'])->name('tambahmobil-baru');
 
 //login register(farabi)
 Route::get('/', [AuthController::class, 'login'])->middleware('HaslogIn');
@@ -46,7 +46,6 @@ Route::get('/logout', [AuthController::class, 'logout']);
 
 // farabi
 Route::get('/pemesanan', [PemesananController::class, 'index']);
-Route::get('/tablePemesanan', [PemesananController::class, 'showTable']);
 Route::post('/formSubmit', [PemesananController::class, 'formSubmit'])->name('formSubmit');
 
 // dashboard

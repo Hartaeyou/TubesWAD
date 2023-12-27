@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Mobil extends Model
 {
     use HasFactory;
+    public $table = "data_mobil";
 }
