@@ -18,12 +18,15 @@ class mobilcontroller extends Controller
     public function indexlihat()
     {
         //
-        return view("mobil/lihatmobil");
+        $mobil = Mobil::select('*')->get() ;
+        return view('mobil/lihatmobil', ['mobil' => $mobil]);
     }
     public function indextambah()
     {
         //
         return view("mobil/tambahmobil");
+
+        
     }
     
 
@@ -65,12 +68,18 @@ class mobilcontroller extends Controller
         }
     }
 
+    public function lihatmobil()
+    {
+        
+    }
+
     /**
      * Display the specified resource.
      */
     public function show(Mobil $mobil)
     {
         //
+
     }
 
     /**

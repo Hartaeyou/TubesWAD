@@ -52,16 +52,21 @@
                     <th scope="col">Brand Mobil</th>
                     <th scope="col">Warna Mobil</th>
                     <th scope="col">Plat Mobil</th>
+                    <th scope="col">Mitra Mobil</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
+                @foreach($mobil as $m)
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <th scope="row">{{$m->id}}</th>
+                    <td>{{$m->nama_mobil}}</td>
+                    <td>{{$m->brand_mobil}}</td>
+                    <td>{{$m->warna_mobil}}</td>
+                    <td>{{$m->plat_mobil}}</td>
+                    <td>{{$m->mitra_mobil}}</td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
