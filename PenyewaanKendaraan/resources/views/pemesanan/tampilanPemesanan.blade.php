@@ -16,6 +16,9 @@
             <div class="card-body">
                 <h1 class="card-title text-center">Form Pemesanan SeKa</h1><br>
                 <form action="{{route('formSubmit')}}" method="post">
+                    @if(Session::has("success"))
+                    <div class="alert alert-success">{{Session::get("success")}}</div>
+                    @endif
                     @csrf
                 <div class="mb-3">
                     <label for="nama" class="form-label">Nama Pemesan</label>
@@ -59,9 +62,14 @@
                     <span class="text-danger">@error("tanggalKeluar") {{$message}} @enderror</span>
 
                 </div>
-        
-                    <button type="submit" class="btn btn-success">Pesan!</button>
-    
+                <div class="d-flex">
+                    <div class="p-2 flex-grow-1">                        
+                        <button type="submit" class="btn btn-success">Pesan!</button>
+                    </div>
+                    <div class="p-2">
+                        <a class="btn btn-danger"href="tablePemesanan">kembali</a>
+                    </div>
+                </div>
                 </form>
             </div>
         </div>

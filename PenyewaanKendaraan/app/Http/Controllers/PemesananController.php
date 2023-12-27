@@ -41,6 +41,10 @@ class PemesananController extends Controller
         return back()->with('success', 'Pemesanan berhasil!');
         
     }
+    public function showTable(){
+        $data= Pemesanan::simplePaginate(4);
+        return view('pemesanan.tablePemesanan',['pemesanans'=>$data]);
+    }
 
   
 }

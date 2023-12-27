@@ -1,5 +1,5 @@
 <!-- Nav -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar nav-underline navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="#">
         <img src="{{ URL('img/logo.png') }}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
             SeKa
@@ -24,11 +24,16 @@
                     <a class="nav-link" href="#">Motor</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Pemesanan</a>
+                    <a class="nav-link" aria-current="page" href="/tablePemesanan">Pemesanan</a>
                 </li>
             </ul>
         </div>
     </div>
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <a class="btn btn-dark btn-sm" aria-current="page" href="logout">Log Out</a>
+        </li>
+    </ul>
 </nav>
 
 <!-- Nav End -->
