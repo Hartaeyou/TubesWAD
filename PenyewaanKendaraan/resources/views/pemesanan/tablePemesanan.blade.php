@@ -36,7 +36,7 @@
                 <td>{{$pemesanan["tanggal_masuk"]}}</td>
                 <td>{{$pemesanan["tanggal_keluar"]}}</td>
                 <td>
-                    <a class="btn btn-outline-info"href="">Edit</a>
+                    <a class="btn btn-outline-info"href="{{ url('formUpdatePemesanan',$pemesanan->id) }}">Edit</a>
                     <a class="btn btn-outline-danger"href="">Hapus</a>
                     <a class="btn btn-outline-success"href="">Bayar</a>
                 </td>

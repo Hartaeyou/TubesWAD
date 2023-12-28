@@ -7,17 +7,12 @@ use App\Models\Pemesanan;
 
 class PemesananController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+   
     public function index()
     {
         return view("pemesanan.tampilanPemesanan");
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function formSubmit(Request $request)
     {
         $validatedData = $request->validate([
@@ -49,5 +44,14 @@ class PemesananController extends Controller
         return view('pemesanan.tablePemesanan',['pemesanans'=>$data]);
     }
 
-  
+    public function formUpdate($id){
+        $updateForm = Pemesanan::where('id',$id)->first();
+        return view('pemesanan.formUpdatePemesanan', compact('updateForm'));
+   
+    }
+    public function update(Request $request, $id){
+        $updateForm = Pemesanan::where('id',$id)->first();
+        $updateForm->update($request->all());
+        return redirect('tablePemesanan')->with('success', 'Data Telah Terganti');
+    }
 }
