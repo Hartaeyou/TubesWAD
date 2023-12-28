@@ -23,12 +23,8 @@ use Illuminate\Support\Facades\Route;
 
 
 
-// Route::get('/', function (){
-//     return view('index');
-// });
 
-
-// isi aja punya siapa gatau
+// devi
 Route::get('/motor', [motorController::class, 'index']);
 
 // dasheva
@@ -46,9 +42,9 @@ Route::post('login-user', [AuthController::class, 'loginUser'])->name("login-use
 Route::get('/logout', [AuthController::class, 'logout']);
 
 // farabi
-Route::get('/pemesanan', [PemesananController::class, 'index']);
+Route::get('/pemesanan', [PemesananController::class, 'index'])->middleware("islogIn");
 Route::post('/formSubmit', [PemesananController::class, 'formSubmit'])->name('formSubmit');
-Route::get('/tablePemesanan', [PemesananController::class, 'showTable']);
+Route::get('/tablePemesanan', [PemesananController::class, 'showTable'])->middleware("islogIn");
 
 // dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware("islogIn");
