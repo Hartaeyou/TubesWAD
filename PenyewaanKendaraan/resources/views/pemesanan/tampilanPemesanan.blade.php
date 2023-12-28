@@ -16,6 +16,7 @@
             <div class="card-body">
                 <h1 class="card-title text-center">Form Pemesanan SeKa</h1><br>
                 <form action="{{route('formSubmit')}}" method="post">
+                @csrf
                 <div class="mb-3">
                     <label for="nama" class="form-label">Nama Pemesan</label>
                     <input type="text" class="form-control" id="nama" aria-describedby="emailHelp" name="nama">

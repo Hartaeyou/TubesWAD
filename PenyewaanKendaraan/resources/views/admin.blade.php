@@ -7,7 +7,7 @@
 @section('content')
     <div class="container text-center mt-4">
         <h1 style="font-weight: bold;">Admin Dashboard</h1>
-        <img src="{{ URL('img/admin_logo.png') }}" alt="Admin Logo" width="575" height="530"
+        <img src="{{ URL('img/logo.png') }}" alt="Admin Logo" width="575" height="530"
             class="d-inline-block align-text-top mt-3">
         
         <div class="mt-4">
