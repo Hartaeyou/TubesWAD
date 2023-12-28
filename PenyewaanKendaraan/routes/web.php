@@ -8,6 +8,7 @@ use App\Http\Controllers\PemesananController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\tambahmobilcontroller;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,3 +52,6 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware("isl
 
 // Rismawan
 Route::get('/pembayaran', [PembayaranController::class, 'index']);
+
+// Ghifary
+Route::get('/admin', [adminController::class, 'index']);
