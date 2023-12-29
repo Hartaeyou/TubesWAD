@@ -10,7 +10,7 @@ class PembayaranController extends Controller
     public function index() {
         $pemesanans = Pemesanan::all();
 
-        return view('pemesanan.tampilanPembayaran', compact('pemesanans'));
+        return view('pembayaran.tampilanPembayaran', compact('pemesanans'));
     }
 
     public function lunaskan($id) {
