@@ -9,6 +9,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\tambahmobilcontroller;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\pelangganController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,3 +60,6 @@ Route::get('/pembayaran', [PembayaranController::class, 'index']);
 
 // Ghifary
 Route::get('/admin', [adminController::class, 'index']);
+
+// azri
+Route::get('/pelanggan', [pelangganController::class, 'index']);
