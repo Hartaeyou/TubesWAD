@@ -38,7 +38,7 @@
                 <td>
                     <a class="btn btn-outline-info"href="{{ url('formUpdatePemesanan',$pemesanan->id) }}">Edit</a>
                     <a class="btn btn-outline-danger"href="">Hapus</a>
-                    <a class="btn btn-outline-success"href="">Bayar</a>
+                    <a class="btn btn-outline-success"href="/tempatPembayaran">Bayar</a>
                 </td>
             </tbody>
             @endforeach

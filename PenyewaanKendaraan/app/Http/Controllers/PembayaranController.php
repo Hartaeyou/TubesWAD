@@ -27,6 +27,6 @@ class PembayaranController extends Controller
             return back()->with('error', 'The order is not marked as paid.');
         }
     
-        return view('pemesanan.receipt', compact('order'));
+        return view('pembayaran.receipt', compact('order'));
     }
 }
