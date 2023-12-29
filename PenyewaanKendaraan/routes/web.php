@@ -8,7 +8,6 @@ use App\Http\Controllers\PemesananController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\tambahmobilcontroller;
-use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,10 +25,7 @@ use Illuminate\Support\Facades\Route;
 
 
 // devi
-Route::get('/motor', [motorController::class, 'index'])->name('motor');
-Route::get('/lihatmotor', [motorController::class, 'show'])->name('lihatmotor');
-Route::get('/setailmotor', [motorController::class, 'detail'])->name('detailmotor');
-Route::get('/tambahmotor', [motorController::class, 'tambah'])->name('tambahmotor');
+Route::get('/motor', [motorController::class, 'index']);
 
 // dasheva
 Route::get('/mobil', [mobilcontroller::class,'index'])->name('mobil');
@@ -48,14 +44,13 @@ Route::get('/logout', [AuthController::class, 'logout']);
 // farabi
 Route::get('/pemesanan', [PemesananController::class, 'index'])->middleware("islogIn");
 Route::post('/formSubmit', [PemesananController::class, 'formSubmit'])->name('formSubmit');
-Route::get('/tablePemesanan', [PemesananController::class, 'showTable'])->middleware("islogIn")->name("tablePemesanan");
-Route::get('/formUpdatePemesanan/{id}', [PemesananController::class, 'formUpdate'])->name("formUpdatePemesanan")->middleware("islogIn");
-Route::get('/updatedData/{id}', [PemesananController::class, 'update'])->name("updatedData");
+Route::get('/tablePemesanan', [PemesananController::class, 'showTable'])->middleware("islogIn");
+
 // dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware("islogIn");
 
 // Rismawan
-Route::get('/pembayaran', [PembayaranController::class, 'index']);
+Route::get('/tempatPembayaran', [PembayaranController::class, 'index'])->name('tempatPembayaran');
+Route::get('/pembayaran/lunaskan/{id}', [PembayaranController::class, 'lunaskan'])->name('lunaskan');
+Route::get('/pembayaran/processPayment/{id}', [PembayaranController::class, 'processPayment'])->name('processPayment');
 
-// Ghifary
-Route::get('/admin', [adminController::class, 'index']);

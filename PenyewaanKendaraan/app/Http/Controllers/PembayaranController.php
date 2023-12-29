@@ -2,64 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pembayaran;
 use Illuminate\Http\Request;
+use App\Models\Pemesanan;
 
 class PembayaranController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        return view("tampilanPembayaran");
+    public function index() {
+        $pemesanans = Pemesanan::all();
+
+        return view('pemesanan.tampilanPembayaran', compact('pemesanans'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+    public function lunaskan($id) {
+        $pemesanan = Pemesanan::findOrFail($id);
+        $pemesanan->update(['pembayaran' => 'Lunas']);
+
+        return redirect()->route('tempatPembayaran');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+    public function processPayment($id) {
+        $order = Pemesanan::findOrFail($id);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Pembayaran $pembayaran)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Pembayaran $pembayaran)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Pembayaran $pembayaran)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Pembayaran $pembayaran)
-    {
-        //
+        if ($order->pembayaran !== 'Lunas') {
+            return back()->with('error', 'The order is not marked as paid.');
+        }
+    
+        return view('pemesanan.receipt', compact('order'));
     }
 }
