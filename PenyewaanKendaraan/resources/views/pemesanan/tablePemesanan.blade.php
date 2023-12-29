@@ -74,11 +74,5 @@ $('.delete').click(function(){
 })
 </script>
 
-@if(Session::has("success"))
-<script>
-    swal("Selamat", "{!! Session::get('success') !!}", "success", {
-        button: "OK",
-    });
-</script>
-@endif
+
 @endsection

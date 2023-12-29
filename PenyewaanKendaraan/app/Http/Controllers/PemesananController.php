@@ -33,7 +33,7 @@ class PemesananController extends Controller
             'tanggal_keluar' => $validatedData['tanggalKeluar'],
         ]);
         if ($tambah){
-            return back()->with('success', 'Pemesanan berhasil!');
+            return redirect('tablePemesanan')->with('success', 'Pemesanan berhasil!');
         }else{
             return back();
         }

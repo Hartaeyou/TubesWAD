@@ -10,17 +10,7 @@ use Session;
 
 class AuthController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
+    
     public function login()
     {
         return view('Auth.Authlogin');
@@ -47,7 +37,7 @@ class AuthController extends Controller
         $admin->password = Hash::make($request->password);
         $result= $admin->save();
         if($result){
-            return back()->with("Success","Anda Telah Berhasil Registrasi");
+            return redirect('/')->with("Success","Anda Telah Berhasil Registrasi, Silahkan Login");
         }
         else{
             return back()->with("Fail","Anda Gagal Registrasi");   
