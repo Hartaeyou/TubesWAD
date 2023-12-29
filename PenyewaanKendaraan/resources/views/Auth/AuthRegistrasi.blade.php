@@ -46,7 +46,7 @@
                                 <span class="text-danger">@error("password") {{$message}} @enderror</span>
                             </div>
                             <button type="submit" class="btn btn-primary" name="login">User Login</button>
-                            <span>Belum Punya akun? <a href="/" class="text-decoration-none">Daftar Disini</a></span>
+                            <span>Sudah Punya akun? <a href="/" class="text-decoration-none">LOG IN</a></span>
                         </form>
                     </div>
                 </div>

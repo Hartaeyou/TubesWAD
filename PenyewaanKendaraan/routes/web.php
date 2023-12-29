@@ -48,7 +48,7 @@ Route::get('/logout', [AuthController::class, 'logout']);
 // farabi
 Route::get('/pemesanan', [PemesananController::class, 'index'])->middleware("islogIn");
 Route::post('/formSubmit', [PemesananController::class, 'formSubmit'])->name('formSubmit');
-Route::get('/tablePemesanan', [PemesananController::class, 'showTable'])->middleware("islogIn");
+Route::get('/tablePemesanan', [PemesananController::class, 'showTable'])->middleware("islogIn")->name("tablePemesanan");
 Route::get('/formUpdatePemesanan/{id}', [PemesananController::class, 'formUpdate'])->name("formUpdatePemesanan")->middleware("islogIn");
 Route::get('/updatedData/{id}', [PemesananController::class, 'update'])->name("updatedData");
 // dashboard
