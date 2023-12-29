@@ -52,6 +52,8 @@ Route::post('/formSubmit', [PemesananController::class, 'formSubmit'])->name('fo
 Route::get('/tablePemesanan', [PemesananController::class, 'showTable'])->middleware("islogIn")->name("tablePemesanan");
 Route::get('/formUpdatePemesanan/{id}', [PemesananController::class, 'formUpdate'])->name("formUpdatePemesanan")->middleware("islogIn");
 Route::get('/updatedData/{id}', [PemesananController::class, 'update'])->name("updatedData");
+Route::get('/delete/{id}', [PemesananController::class, 'delete'])->name("delete");
+
 // dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware("islogIn");
 

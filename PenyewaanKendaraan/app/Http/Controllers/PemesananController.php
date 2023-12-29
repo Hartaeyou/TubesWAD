@@ -54,4 +54,10 @@ class PemesananController extends Controller
         $updateForm->update($request->all());
         return redirect('tablePemesanan')->with('success', 'Data Telah Terganti');
     }
+    public function delete($id){
+        $deleteForm = Pemesanan::where('id',$id);
+        $deleteForm->delete();
+        return back()->with('success', 'Data Telah Dihapus');
+
+    }
 }
