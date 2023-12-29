@@ -39,7 +39,7 @@
                 <td>{{$pemesanan["tanggal_keluar"]}}</td>
                 <td>
                     <a class="btn btn-outline-info"href="{{ url('formUpdatePemesanan',$pemesanan->id) }}">Edit</a>
-                    <a class="btn btn-outline-danger delete"href="#" data-id="{{$pemesanan->id}}">Hapus</a>
+                    <a class="btn btn-outline-danger delete"href="#" data-id="{{$pemesanan->id}}" data-nama="{{$pemesanan->nama}}">Hapus</a>
                     <a class="btn btn-outline-success"href="/pembayaran/{{$pemesanan->id}}"/>Bayar</a>
                 </td>
             </tbody>
@@ -52,22 +52,33 @@
 </div>
 <script>
 $('.delete').click(function(){
+    var namaPemesan = $(this).attr('data-nama');
+    var idPemesan = $(this).attr('data-id');
     swal({
-        title: "Are you sure?",
-        text: "Once deleted, you will not be able to recover this imaginary file!",
+        title: "Apakah Anda Yakin?",
+        text: "Anda akan menghapus data pegawai dengan nama " +namaPemesan+" ",
         icon: "warning",
         buttons: true,
         dangerMode: true,
     })
     .then((willDelete) => {
         if (willDelete) {
-            swal("Poof! Your imaginary file has been deleted!", {
+            window.location="/delete/"+idPemesan+""
+            swal("Data Berhasil Dihapus", {
                 icon: "success",
             });
         } else {
-            swal("Your imaginary file is safe!");
+            swal("Data Tidak Jadi Dihapus");
         }
     });
 })
 </script>
+
+@if(Session::has("success"))
+<script>
+    swal("Selamat", "{!! Session::get('success') !!}", "success", {
+        button: "OK",
+    });
+</script>
+@endif
 @endsection
