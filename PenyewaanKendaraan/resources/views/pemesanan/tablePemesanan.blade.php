@@ -3,6 +3,8 @@
 @section('title')
 <title>Pemesanan</title>
 @endsection
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
 @section('cssfile')
 <link rel="stylesheet" href="{ URL('cssFile/tablePemesanan.css) }}">
 @endsection
@@ -37,8 +39,8 @@
                 <td>{{$pemesanan["tanggal_keluar"]}}</td>
                 <td>
                     <a class="btn btn-outline-info"href="{{ url('formUpdatePemesanan',$pemesanan->id) }}">Edit</a>
-                    <a class="btn btn-outline-danger"href="/delete/{{$pemesanan->id}}">Hapus</a>
-                    <a class="btn btn-outline-success"href="">Bayar</a>
+                    <a class="btn btn-outline-danger delete"href="#" data-id="{{$pemesanan->id}}">Hapus</a>
+                    <a class="btn btn-outline-success"href="/pembayaran/{{$pemesanan->id}}"/>Bayar</a>
                 </td>
             </tbody>
             @endforeach
@@ -48,5 +50,24 @@
         </div>
     </div>
 </div>
-
+<script>
+$('.delete').click(function(){
+    swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this imaginary file!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+    .then((willDelete) => {
+        if (willDelete) {
+            swal("Poof! Your imaginary file has been deleted!", {
+                icon: "success",
+            });
+        } else {
+            swal("Your imaginary file is safe!");
+        }
+    });
+})
+</script>
 @endsection
