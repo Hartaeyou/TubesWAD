@@ -44,7 +44,7 @@
                         <option value="Lunas">Lunas</option>
                         <span class="text-danger">@error("pembayaran") {{$message}} @enderror</span>
 
-                    </select>
+                    </select>   
                 </div>
                 <div class="mb-3 row">
                     <div class="col">
