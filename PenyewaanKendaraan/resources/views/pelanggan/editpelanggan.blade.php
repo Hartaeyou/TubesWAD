@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<h1 style="text-align : center;">Tambah Data Pelanggan</h1>
+<h1 style="text-align : center;">Edit Data Pelanggan</h1>
     <div class="container" style="margin-top : 20px;">
         <div class="d-grid gap-2 col-4 mx-auto">
 
@@ -38,7 +38,10 @@
                         </div>
 
                         <div class="d-grid gap-2 col-10 mx-auto mt-4">
-                            <button type="submit" class="btn btn-primary">Tambah</button>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
+                        </div>
+                        <div class="d-grid gap-2 col-10 mx-auto mt-3">
+                            <button type="submit" class="btn btn-danger">Kembali</button>
                         </div>
                     </form>
                 </div>

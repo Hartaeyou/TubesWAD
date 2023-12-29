@@ -20,27 +20,20 @@
                     <th scope="col">Nama</th>
                     <th scope="col">Nomor Handphone</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Detail</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($data_customer as $c)
                 <tr>
-                    <th scope="row">{{$m->id}}</th>
-                    <td>{{$m->nama_customer}}</td>
-                    <td>{{$m->nomor_telepon}}</td>
-                    <td>{{$m->email_customer}}</td>
-                    <td><a href="detail" class="btn btn-primary">Detail</a></td>
+                    <th scope="row">id</th>
+                    <td>Nama</td>
+                    <td>Handphone</td>
+                    <td>Email</td>
+                    <td><a class="btn btn-primary">Detail</a></td>
                 </tr>
-                @endforeach
             </tbody>
         </table>
-        <div class="d-flex justify-content-end">
-            {{$data_customer->links()}}
-        </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
 </body>
 
 @endsection
