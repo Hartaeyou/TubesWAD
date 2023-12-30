@@ -5,6 +5,12 @@
 @endsection
 
 @section('content')
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <section id="home">
         <div class="container">
             <div class="d-flex flex-column align-items-center gap-5">
@@ -16,9 +22,11 @@
                 </div>
                 <div class="d-flex flex-row gap-3 mt-3">
                     <a href="tambahmotor" class="btn btn-dark" role="button" aria-pressed="true" style="width: 200px;">Tambah</a>
-                    <a href="#" class="btn btn-dark" role="button" aria-pressed="true" style="width: 200px;">Lihat</a>
+                    <a href="listmotor" class="btn btn-dark" role="button" aria-pressed="true" style="width: 200px;">Lihat</a>
                 </div>
             </div>
         </div>
     </section>
+
+
 @endsection

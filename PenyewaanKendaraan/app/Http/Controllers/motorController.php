@@ -23,9 +23,11 @@ class motorController extends Controller
         return view('motor\tambahmotor');
     }
 
-    public function show()
+    public function list()
     {
-        return view('motor\lihatmotor');
+        $motors = Motor::all(); // Fetch all motors
+    
+        return view('motor\listmotor', ['motors' => $motors]);
     }
 
     public function detail()
@@ -50,10 +52,30 @@ class motorController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    // public function store(Request $request)
-    // {
-    //     //
-    // }
+    public function store(Request $request)
+    {
+        $validate = $request->validate([
+            'nama' => 'required',
+            'brand' => 'required',
+            'warna' => 'required',
+            'plat' => 'required',
+        ]);
+    
+        Motor::create([
+            'nama_motor' => $request->nama,
+            'brand_motor' => $request->brand,
+            'warna_motor' => $request->warna,
+            'plat_motor' => $request->plat,
+            'mitra_motor' => $request->mitra_motor ?? '', // Provide a default value if not present
+            // 'mitra_motor' => $request->mitra_motor, // Provide a value here
+            // 'status' => 'active', // Or any default value for 'status' field
+        ]);
+        $successMessage = 'Data berhasil disimpan';
+        return redirect()->route('motor')->with('success', $successMessage);
+
+        // return redirect()->route('tambahmotor')->with('success', 'Data berhasil disimpan');
+    }    
+
 
     // /**
     //  * Display the specified resource.

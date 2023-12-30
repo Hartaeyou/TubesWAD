@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" integrity="sha512-gOQQLjHRpD3/SEOtalVq50iDn4opLVup2TF8c4QPI3/NmUPNZOk2FG0ihi8oCU/qYEsw4P6nuEZT2lAG0UNYaw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 @section('cssfile')
-    <link rel="stylesheet" href="{ URL('cssFile/cssTampilan.css) }}">
+    <link rel="stylesheet" href="{{ URL('cssFile/cssTampilan.css') }}">
     <style>
         #form {
             margin-top: 30px;
@@ -14,6 +14,7 @@
             width: 400px;
             margin-bottom: 20px;
         }
+        
     </style>
 @endsection
 
@@ -26,32 +27,51 @@
         @endif
 
         <div class="container">
-            <div class="d-flex flex-column align-items-center gap-5">
+           <div class="d-flex flex-column align-items-center gap-5">
                 <div style="width: 900px; text-align: center;">
-                    <h1 style="font-wesight: bold; margin-top: 30px;">Tambah Data Motor</h1>
+                    <h1 style="font-weight: bold; margin-top: 30px;">Tambah Data Motor</h1>
                 </div>
                 <div>
-                    <form class="form-control" action="{{ route('motor') }}" method="POST" enctype="multipart/form-data" >
+                    <form class="form-control" action="{{ route('motor.store') }}" method="POST" enctype="multipart/form-data" >
                         @csrf
                         <div class="form-group">
-                            <label for="nameFormControlInput1">Nama Mobil</label>
-                            <input class="form-control" id="nama" name="name" type="text" required placeholder="Masukkan Nama Motor">
+                            <label for="inputNama">Nama Motor</label>
+                            <div class="col-sm-10 mt-2">
+                                <input class="form-control" id="inputNama" name="nama" type="text" required placeholder="Masukkan Nama Motor">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="brandFormControlInput1">Brand Motor</label>
-                            <input class="form-control" id="brand" name="brand" type="text" required placeholder="Masukkan Merk Motor">
+                        <div class="form-group row">
+                            <label for="inputBrand">Brand Motor</label>
+                            <div class="col-sm-10 mt-2">
+                                <input class="form-control" id="inputBrand" name="brand" type="text" required placeholder="Masukkan Merk Motor">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="colourFormControlInput1">Warna Motor</label>
-                            <input class="form-control" id="warna" name="warna" type="text" required placeholder="Masukkan Warna Motor">
+                        <div class="form-group row">
+                            <label for="inputWarna">Warna Motor</label>
+                            <div class="col-sm-10 mt-2">
+                                <input class="form-control" id="inputWarna" name="warna" type="text" required placeholder="Masukkan Warna Motor">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="platFormControlInput1">Plat Motor</label>
-                            <input class="form-control" id="plat" name="plat" type="text" required placeholder="Masukkan Plat Motor">
+                        <div class="form-group row">
+                            <label for="inputPlat">Plat Motor</label>
+                            <div class="col-sm-10 mt-2">
+                                <input class="form-control" id="inputPlat" name="plat" type="text" required placeholder="Masukkan Plat Motor">
+                            </div>
                         </div>
-                            <button class="btn btn-primary" type="submit" style="margin-top: 40px;">Tambah</button>
-                      </form>
-                    </div>
+                        <div class="form-group row">
+                            <div class="col-sm-10 offset-sm-2">
+                                <button class="btn btn-primary" type="submit" style="margin-top: 20px;">Tambah</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
+    {{-- @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif --}}
+
 @endsection

@@ -15,7 +15,6 @@ return new class extends Migration
             $table->string('warna_motor');
             $table->string('plat_motor');
             $table->string('mitra_motor');
-            $table->boolean('status');
             $table->timestamps();
         });
     }
