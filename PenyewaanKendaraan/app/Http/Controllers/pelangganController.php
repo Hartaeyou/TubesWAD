@@ -8,7 +8,7 @@ use App\Models\Pelanggan;
 class pelangganController extends Controller
 {
     public function index(){
-        return view("pelanggan.tambahpelanggan");
+        return view("pelanggan/tambahpelanggan");
     }
 
     public function formTambah(Request $request)
@@ -33,12 +33,12 @@ class pelangganController extends Controller
     
     public function showTabelPelanggan(){
         $data= Pelanggan::simplePaginate(10);
-        return  view("pelanggan.tabelpelanggan",["data_customer"=>$data]);
+        return  view("pelanggan/tabelpelanggan",["data_customer"=>$data]);
     }
 
     public function showDetail($id){
         $ubahForm = Pelanggan::where("id", $id)->first();
-        return view("pelanggan.detailpelanggan",compact('ubahForm'));
+        return view("pelanggan/detailpelanggan",compact('ubahForm'));
     }
 
     public function ubah(Request $request, $id){
@@ -48,6 +48,6 @@ class pelangganController extends Controller
     }
 
     public function showHome(){
-        return view("pelanggan.homepelanggan");
+        return view("pelanggan/homepelanggan");
     }
 }
