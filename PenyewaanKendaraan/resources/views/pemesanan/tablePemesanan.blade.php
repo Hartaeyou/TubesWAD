@@ -56,7 +56,7 @@ $('.delete').click(function(){
     var idPemesan = $(this).attr('data-id');
     swal({
         title: "Apakah Anda Yakin?",
-        text: "Anda akan menghapus data pegawai dengan nama " +namaPemesan+" ",
+        text: "Anda akan menghapus data Pemesan dengan nama " +namaPemesan+" ",
         icon: "warning",
         buttons: true,
         dangerMode: true,
