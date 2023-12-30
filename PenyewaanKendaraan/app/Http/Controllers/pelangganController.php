@@ -25,23 +25,26 @@ class pelangganController extends Controller
             "email_customer" => $validatedData["email"],
         ]);
         if ($tambah){
-            return back()->with("success", "Data Pelanggan telah Ditambah");
+            return redirect("tabelPelanggan")->with("success", "Data Pelanggan telah Ditambah");
         }else{
             return back();
         }
     }
     
     public function showTabelPelanggan(){
-        $data= Pelanggan::simplePaginate(4);
+        $data= Pelanggan::simplePaginate(10);
         return  view("pelanggan.tabelpelanggan",["data_customer"=>$data]);
     }
 
-    public function showDetail(){
-        return view("pelanggan.detailpelanggan");
+    public function showDetail($id){
+        $ubahForm = Pelanggan::where("id", $id)->first();
+        return view("pelanggan.detailpelanggan",compact('ubahForm'));
     }
 
-    public function showEdit(){
-        return view("pelanggan.editpelanggan");
+    public function ubah(Request $request, $id){
+        $ubahForm = Pelanggan::where('id',$id)->first();
+        $ubahForm->update($request->all());
+        return redirect('tabelPelanggan')->with('success', 'Data Telah Terganti');
     }
 
     public function showHome(){

@@ -35,7 +35,7 @@
                         </div>
 
                         <div class="d-grid gap-2 col-10 mx-auto mt-4">
-                            <button type="submit" class="btn btn-primary">Tambah</button>
+                            <button type="submit" class="btn btn-primary" onClick="formTambah()">Tambah</button>
                         </div>
                     </form>
                 </div>
@@ -44,14 +44,5 @@
     </div>
 </body>
 
-@if(Session::has("success"))
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js" integrity="sha512-7VTiy9AhpazBeKQAlhaLRUk+kAMAb8oczljuyJHPsVPWox/QIXDFOnT9DUk1UC8EbnHKRdQowT7sOBe7LAjajQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script>
-    swal("Selamat", "{!! Session::get('success') !!}", "success", {
-        button: "OK",
-    });
-</script>
-@endif
 
 @endsection

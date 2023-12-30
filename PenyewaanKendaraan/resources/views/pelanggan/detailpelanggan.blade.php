@@ -11,34 +11,34 @@
 </head>
 
 <body>
-<h1 style="text-align : center;">Detail Pelanggan</h1>
-    <div class="container" style="margin-top : 20px;">
+<h1 style="text-align : center;">Edit Data Pelanggan</h1>
+    <div class= "container" style="margin-top : 20px;">
         <div class="d-grid gap-2 col-4 mx-auto">
-
             <div class="card">
                 <div class="card-body">
-                    <form>
-                        <div class="d-grid gap-2 col-10 mx-auto">
-                            <label for="nama" class="form-label">Nama</label>
-                            <input type="text" class="form-control" id="nama" name="nama" disabled>
-                        </div>
+                    <form action="{{ url('ubah', $ubahForm->id) }}" method= "get">
+                    @csrf
+                    <div class="d-grid gap-2 col-10 mx-auto">
+                        <label for="nama" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="nama" name="nama_customer"  value="{{ $ubahForm->nama_customer }}" disabled>
+                    </div>
 
-                        <div class="d-grid gap-2 col-10 mx-auto">
-                            <label for="brand" class="form-label">Nomor Handphone</label>
-                            <input type="text" class="form-control" id="brand" name="nomorHandphone" disabled>
-                        </div>
+                    <div class="d-grid gap-2 col-10 mx-auto">
+                        <label for="brand" class="form-label">Nomor Handphone</label>
+                        <input type="text" class="form-control" id="brand" name="nomor_telepon" value="{{ $ubahForm->nomor_telepon }}">
+                    </div>
 
-                        <div class="d-grid gap-2 col-10 mx-auto">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="text" class="form-control" id="email" name="email" disabled>
-                        </div>
+                    <div class="d-grid gap-2 col-10 mx-auto">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" class="form-control" id="email" name="email_customer" value="{{ $ubahForm->email_customer }}">
+                    </div>
 
-                        <div class="d-grid gap-2 col-10 mx-auto mt-4">
-                            <button type="submit" class="btn btn-primary">Edit</button>
-                        </div>
-                        <div class="d-grid gap-2 col-10 mx-auto mt-3">
-                            <button type="submit" class="btn btn-danger">Hapus</button>
-                        </div>
+                    <div class="d-grid gap-2 col-10 mx-auto mt-4">
+                        <buton type="submit" class="btn btn-primary">Simpan</button>
+                    </div>
+                    <div class="d-grid gap-2 col-10 mx-auto mt-3">
+                        <a class="btn btn-danger" href="{{ url('tabelPelanggan') }}">Kembali</a>
+                    </div>
                     </form>
                 </div>
             </div>

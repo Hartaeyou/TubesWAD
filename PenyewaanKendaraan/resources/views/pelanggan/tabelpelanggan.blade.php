@@ -13,6 +13,7 @@
 <body>
 <div class="container">
         <h1 style="margin-bottom : 30px; margin-top : 30px;">List Data Pelanggan</h1>
+        <a class="btn btn-primary" href="tambahPelanggan">+ Tambah</a>
         <table class="table">
             <thead>
                 <tr>
@@ -30,7 +31,11 @@
                     <td>{{$pelanggan["nama_customer"]}}</td>
                     <td>{{$pelanggan["nomor_telepon"]}}</td>
                     <td>{{$pelanggan["email_customer"]}}</td>
-                    <td><a class="btn btn-primary">Detail</a></td>
+                    <td>
+                        <a class="btn btn-primary" href="{{ url('detailPelanggan', $pelanggan->id) }}">Detail</a>
+                        <a class="btn btn-danger">Hapus</a>
+
+                    </td>
                 </tr>
             </tbody>
             @endforeach
