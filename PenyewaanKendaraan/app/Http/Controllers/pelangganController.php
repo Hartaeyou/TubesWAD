@@ -11,18 +11,18 @@ class pelangganController extends Controller
         return view("pelanggan.tambahpelanggan");
     }
 
-    public function formSubmit(Request $request)
+    public function formTambah(Request $request)
     {
         $validatedData = $request->validate([
             "nama" => "required",
-            "nomorHandphone" => "required",
+            "nomorHandphone" => "required|max:11",
             "email" => "required",
         ]);
 
         $tambah = Pelanggan::create([
-            "nama" => $validatedData["nama"],
-            "nomorHandphone" => $validatedData["nomorHandphone"],
-            "email" => $validatedData["email"],
+            "nama_customer" => $validatedData["nama"],
+            "nomor_telepon" => $validatedData["nomorHandphone"],
+            "email_customer" => $validatedData["email"],
         ]);
         if ($tambah){
             return back()->with("success", "Data Pelanggan telah Ditambah");
@@ -31,8 +31,9 @@ class pelangganController extends Controller
         }
     }
     
-    public function showTable(){
-        return  view("pelanggan.tabelpelanggan");
+    public function showTabelPelanggan(){
+        $data= Pelanggan::simplePaginate(4);
+        return  view("pelanggan.tabelpelanggan",["data_customer"=>$data]);
     }
 
     public function showDetail(){

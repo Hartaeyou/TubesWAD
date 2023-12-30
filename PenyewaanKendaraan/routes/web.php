@@ -64,8 +64,9 @@ Route::get('/pembayaran', [PembayaranController::class, 'index']);
 Route::get('/admin', [adminController::class, 'index']);
 
 // azri
-Route::get('/pelanggan', [pelangganController::class, 'index']);
-Route::get('/tabelpelanggan', [pelangganController::class, 'showTable']);
-Route::get('/detailpelanggan', [pelangganController::class, 'showDetail']);
-Route::get('/editpelanggan', [pelangganController::class, 'showEdit']);
-Route::get('/homepelanggan', [pelangganController::class, 'showHome']);
+Route::get('/tambahPelanggan', [pelangganController::class, 'index']);
+Route::get('/tabelPelanggan', [pelangganController::class, 'showTabelPelanggan']);
+Route::get('/detailPelanggan', [pelangganController::class, 'showDetail']);
+Route::get('/editPelanggan', [pelangganController::class, 'showEdit']);
+Route::get('/homePelanggan', [pelangganController::class, 'showHome']);
+Route::get('/tambahPelangganBaru',[pelangganController::class,'formTambah'])->name('tambahPelangganBaru');

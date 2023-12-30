@@ -2,13 +2,10 @@
 
 @section('content')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" integrity="sha512-gOQQLjHRpD3/SEOtalVq50iDn4opLVup2TF8c4QPI3/NmUPNZOk2FG0ihi8oCU/qYEsw4P6nuEZT2lAG0UNYaw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+@section('cssfile')
+<link rel="stylesheet" href="{ URL('cssFile/cssTampilan.css) }}">
+@endsection
 
 <body>
 <h1 style="text-align : center;">Tambah Data Pelanggan</h1>
@@ -17,7 +14,7 @@
 
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('tambahmobil-baru') }}" method="POST">
+                    <form action="{{ route('tambahPelangganBaru') }}" method="get">
                         @csrf
                         <div class="d-grid gap-2 col-10 mx-auto">
                             <label for="nama" class="form-label">Nama</label>
