@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Pelanggan extends Model
 {
     use HasFactory;
-    protected $fillable = ['nama_customer', 'nomor_customer', 'email_customer'];
+    protected $table ="data_customer";
+    protected $fillable = ['nama_customer', 'nomor_telepon', 'email_customer'];
 }

@@ -17,7 +17,7 @@
 
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('tambahmobil-baru') }}" method="POST">
+                    <form action="{{ route('tambahPelangganBaru') }}" method="get">
                         @csrf
                         <div class="d-grid gap-2 col-10 mx-auto">
                             <label for="nama" class="form-label">Nama</label>
