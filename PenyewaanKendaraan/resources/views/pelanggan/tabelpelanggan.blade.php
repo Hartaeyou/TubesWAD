@@ -23,16 +23,21 @@
                     <th scope="col">Detail</th>
                 </tr>
             </thead>
+            @foreach ($data_customer as $pelanggan)
             <tbody>
                 <tr>
-                    <th scope="row">id</th>
-                    <td>Nama</td>
-                    <td>Handphone</td>
-                    <td>Email</td>
+                    <th scope="row">{{$pelanggan["id"]}}</th>
+                    <td>{{$pelanggan["nama_customer"]}}</td>
+                    <td>{{$pelanggan["nomor_telepon"]}}</td>
+                    <td>{{$pelanggan["email_customer"]}}</td>
                     <td><a class="btn btn-primary">Detail</a></td>
                 </tr>
             </tbody>
+            @endforeach
         </table>
+        <div class="d-flex justify-content-end">
+            {{$data_customer->links()}}
+        </div>
     </div>
 </body>
 

@@ -32,7 +32,7 @@ class pelangganController extends Controller
     }
     
     public function showTabelPelanggan(){
-        $data= Pemesanan::simplePaginate(4);
+        $data= Pelanggan::simplePaginate(4);
         return  view("pelanggan.tabelpelanggan",["data_customer"=>$data]);
     }
 
