@@ -21,7 +21,7 @@
                     <a class="nav-link" href="{{ route("mobil") }}">Mobil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Motor</a>
+                    <a class="nav-link" href="{{ route("motor") }}">Motor</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="/tablePemesanan">Pemesanan</a>

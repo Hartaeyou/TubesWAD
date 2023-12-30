@@ -16,7 +16,7 @@
             <br>
         <div class=" gap-5 d-flex justify-content-center">
         <a class="btn btn-dark btn-lg" href="/tablePemesanan">Pemesanan</a>
-        <a class="btn btn-dark btn-lg" href="">Tambah Motor</a>
+        <a class="btn btn-dark btn-lg" href="/motor">Tambah Motor</a>
         <a class="btn btn-dark btn-lg" href="/mobil">Tambah Mobil</a>
         <a class="btn btn-dark btn-lg" href="">Tambah Pelanggan</a>
         <a class="btn btn-dark btn-lg" href="">Tambah Mitra</a>

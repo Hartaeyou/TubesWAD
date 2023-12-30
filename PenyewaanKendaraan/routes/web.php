@@ -28,10 +28,10 @@ use App\Http\Controllers\mitraController;
 
 
 // devi
-Route::get('/motor', [motorController::class, 'index'])->name('motor');
-Route::get('/lihatmotor', [motorController::class, 'show'])->name('lihatmotor');
-Route::get('/setailmotor', [motorController::class, 'detail'])->name('detailmotor');
-Route::get('/tambahmotor', [motorController::class, 'tambah'])->name('tambahmotor');
+Route::get('/motor', [motorController::class, 'index'])->name('motor')->middleware("islogIn");;
+Route::get('/lihatmotor', [motorController::class, 'show'])->name('lihatmotor')->middleware("islogIn");;
+Route::get('/setailmotor', [motorController::class, 'detail'])->name('detailmotor')->middleware("islogIn");;
+Route::get('/tambahmotor', [motorController::class, 'tambah'])->name('tambahmotor')->middleware("islogIn");;
 
 // dasheva
 Route::get('/mobil', [mobilcontroller::class,'index'])->name('mobil')->middleware("islogIn");

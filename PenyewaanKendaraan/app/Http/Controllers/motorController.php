@@ -33,20 +33,20 @@ class motorController extends Controller
         return view('motor\detailmotor');
     }
 
-    public function data(Request $request)
-    {
-        $data = $request->all();
+    // public function data(Request $request)
+    // {
+    //     $data = $request->all();
 
-        Showroom::create([
-            'nama_mobil' => $data['name'],
-            'brand_mobil' => $data['brand'],
-            'warna_mobil' => $data['warna'],
-            'tipe_mobil' => $data['tipe'],
-            'harga_mobil' => $data['harga']
-        ]);
+    //     Showroom::create([
+    //         'nama_mobil' => $data['name'],
+    //         'brand_mobil' => $data['brand'],
+    //         'warna_mobil' => $data['warna'],
+    //         'tipe_mobil' => $data['tipe'],
+    //         'harga_mobil' => $data['harga']
+    //     ]);
 
-        return redirect(route('showroom.index'));
-    }
+    //     return redirect(route('mobil.index'));
+    // }
     /**
      * Store a newly created resource in storage.
      */
