@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="{ URL('cssFile/cssTampilan.css) }}">
 @endsection
 
+@section('content')
 <h1 class="d-flex justify-content-center">Table Mitra</h1>
 <div class="d-flex justify-content-center align-items-center" style="min-height: 35vh;">    
     <div class="container">
@@ -38,7 +39,6 @@
             @endforeach
         </table>
         <div class="d-flex justify-content-end">
-            {{$data_mitra->links()}}
         </div>
     </div>
 </div>

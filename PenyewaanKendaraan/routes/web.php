@@ -75,5 +75,4 @@ Route::get('/homePelanggan', [pelangganController::class, 'showHome']);
 Route::get('/tambahPelangganBaru',[pelangganController::class,'formTambah'])->name('tambahPelangganBaru');
 
 //Hafizh
-Route::get('/mitra', [mitraController::class, 'index']);
-Route::get('/tableMitra', [mitraController::class, 'showTable'])->name('tampilanMitra');
+Route::get('/mitra', [mitraController::class, 'showTable'])->name('tampilanMitra');

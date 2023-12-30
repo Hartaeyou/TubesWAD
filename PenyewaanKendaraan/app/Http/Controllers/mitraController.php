@@ -7,11 +7,6 @@ use Illuminate\Http\Request;
 
 class mitraController extends Controller
 {
-    public function index()
-    {
-        return view('mitra/tampilanMitra');
-    }
-
     public function showTable()
     {
         // Fetch data from the Mitra model
