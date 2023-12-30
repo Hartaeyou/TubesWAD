@@ -43,7 +43,7 @@ class mobilcontroller extends Controller
     public function delete($id){
         $mobil = Mobil::where('id',$id)->first();
         $mobil->delete();
-        return redirect('lihatmobil')->with('success', 'Data Telah Terganti');
+        return redirect('lihatmobil')->with('success', 'Data Telah Terhapus');
     }
 
     /**
@@ -76,10 +76,10 @@ class mobilcontroller extends Controller
             $mobil->mitra_mobil = $request->mitra_mobil;
             $result= $mobil->save();
             if($result){
-                return back()->with("Success","Anda Telah Berhasil Registrasi");
+                return redirect("lihatmobil")->with("success","Data Berhasil Ditambah");
             }
             else{
-                return back()->with("Fail","Anda Gagal Registrasi");   
+                return back()->with("Fail","Data Gagal Ditambah");   
             }
         }
     }
