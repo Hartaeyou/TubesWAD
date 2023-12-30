@@ -28,12 +28,23 @@ class mobilcontroller extends Controller
 
         
     }
-
-    public function detail()
-    {
-        return view("mobil/detailmobil");
+    public function edit($id){
+        $mobil = Mobil::where('id',$id)->first();
+        return view('mobil/updatemobil', compact('mobil'));
+   
     }
-    
+
+    public function update(Request $request, $id){
+        $mobil = Mobil::where('id',$id)->first();
+        $mobil->update($request->all());
+        return redirect('lihatmobil')->with('success', 'Data Telah Terganti');
+}
+
+    public function delete($id){
+        $mobil = Mobil::where('id',$id)->first();
+        $mobil->delete();
+        return redirect('lihatmobil')->with('success', 'Data Telah Terganti');
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -73,10 +84,6 @@ class mobilcontroller extends Controller
         }
     }
 
-    public function lihatmobil()
-    {
-        
-    }
 
     /**
      * Display the specified resource.
@@ -90,18 +97,10 @@ class mobilcontroller extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Mobil $mobil)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Mobil $mobil)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.

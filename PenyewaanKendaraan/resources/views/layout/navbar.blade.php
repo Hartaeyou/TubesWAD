@@ -1,5 +1,5 @@
 <!-- Nav -->
-<nav class="navbar nav-underline navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar nav-underline navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/dashboard">
         <img src="{{ URL('img/logo.png') }}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
             SeKa
@@ -18,7 +18,7 @@
                     <a class="nav-link" href="#">Pelanggan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Mobil</a>
+                    <a class="nav-link" href="{{ route("mobil") }}">Mobil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Motor</a>
@@ -31,7 +31,7 @@
     </div>
     <ul class="nav justify-content-end">
         <li class="nav-item">
-            <a class="btn btn-dark btn-sm" aria-current="page" href="logout">Log Out</a>
+            <a class="btn btn-danger btn-sm" aria-current="page" href="logout">Log Out</a>
         </li>
     </ul>
 </nav>
