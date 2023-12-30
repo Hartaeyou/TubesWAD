@@ -44,7 +44,13 @@ class pelangganController extends Controller
     public function ubah(Request $request, $id){
         $ubahForm = Pelanggan::where('id',$id)->first();
         $ubahForm->update($request->all());
-        return redirect('tabelPelanggan')->with('success', 'Data Telah Terganti');
+        return redirect('tabelPelanggan')->with('success', 'Data Telah Diganti');
+    }
+
+    public function hapus($id){
+        $ubahForm = Pelanggan::where('id',$id)->first();
+        $ubahForm->delete();
+        return redirect('tabelPelanggan')->with('success', 'Data telah Diganti');
     }
 
     public function showHome(){
