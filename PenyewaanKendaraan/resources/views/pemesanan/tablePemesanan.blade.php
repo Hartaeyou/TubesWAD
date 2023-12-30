@@ -3,6 +3,8 @@
 @section('title')
 <title>Pemesanan</title>
 @endsection
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
 @section('cssfile')
 <link rel="stylesheet" href="{ URL('cssFile/tablePemesanan.css) }}">
 @endsection
@@ -37,8 +39,8 @@
                 <td>{{$pemesanan["tanggal_keluar"]}}</td>
                 <td>
                     <a class="btn btn-outline-info"href="{{ url('formUpdatePemesanan',$pemesanan->id) }}">Edit</a>
-                    <a class="btn btn-outline-danger"href="">Hapus</a>
-                    <a class="btn btn-outline-success"href="">Bayar</a>
+                    <a class="btn btn-outline-danger delete"href="#" data-id="{{$pemesanan->id}}" data-nama="{{$pemesanan->nama}}">Hapus</a>
+                    <a class="btn btn-outline-success"href="/pembayaran/{{$pemesanan->id}}"/>Bayar</a>
                 </td>
             </tbody>
             @endforeach
@@ -48,5 +50,36 @@
         </div>
     </div>
 </div>
+<script>
+$('.delete').click(function(){
+    var namaPemesan = $(this).attr('data-nama');
+    var idPemesan = $(this).attr('data-id');
+    swal({
+        title: "Apakah Anda Yakin?",
+        text: "Anda akan menghapus data pegawai dengan nama " +namaPemesan+" ",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+    .then((willDelete) => {
+        if (willDelete) {
+            window.location="/delete/"+idPemesan+""
+            swal("Data Berhasil Dihapus", {
+                icon: "success",
+            });
+        } else {
+            swal("Data Tidak Jadi Dihapus");
+        }
+    });
+})
+</script>
+@if(Session::has("success"))
+<script>
+    swal("Selamat", "{!! Session::get('success') !!}", "success", {
+        button: "OK",
+    });
+@endif
+</script>
+
 
 @endsection

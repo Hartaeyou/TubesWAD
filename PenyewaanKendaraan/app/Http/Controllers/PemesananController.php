@@ -33,7 +33,7 @@ class PemesananController extends Controller
             'tanggal_keluar' => $validatedData['tanggalKeluar'],
         ]);
         if ($tambah){
-            return back()->with('success', 'Pemesanan berhasil!');
+            return redirect('tablePemesanan')->with('success', 'Pemesanan berhasil!');
         }else{
             return back();
         }
@@ -53,5 +53,11 @@ class PemesananController extends Controller
         $updateForm = Pemesanan::where('id',$id)->first();
         $updateForm->update($request->all());
         return redirect('tablePemesanan')->with('success', 'Data Telah Terganti');
+    }
+    public function delete($id){
+        $deleteForm = Pemesanan::where('id',$id);
+        $deleteForm->delete();
+        return back()->with('success', 'Data Telah Dihapus');
+
     }
 }

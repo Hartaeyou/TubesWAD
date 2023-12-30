@@ -3,6 +3,8 @@
 @section('title')
 <title>Perbaruan Data</title>
 @endsection
+
+<script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" integrity="sha512-gOQQLjHRpD3/SEOtalVq50iDn4opLVup2TF8c4QPI3/NmUPNZOk2FG0ihi8oCU/qYEsw4P6nuEZT2lAG0UNYaw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @section('cssfile')
 <link rel="stylesheet" href="{ URL('cssFile/cssTampilan.css) }}">
@@ -61,7 +63,7 @@
                 </div>
                 <div class="d-flex">
                     <div class="p-2 flex-grow-1">                        
-                        <button type="submit" onClick="formSubmit()"class="btn btn-success">Perbarui</button>
+                        <button type="submit" class="btn btn-success perbarui">Perbarui</button>
                     </div>
                     <div class="p-2">
                         <a class="btn btn-danger" href="{{ route('tablePemesanan')}}">kembali</a>
@@ -74,14 +76,7 @@
 
 </div>
 
-@if(Session::has("success"))
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js" integrity="sha512-7VTiy9AhpazBeKQAlhaLRUk+kAMAb8oczljuyJHPsVPWox/QIXDFOnT9DUk1UC8EbnHKRdQowT7sOBe7LAjajQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script>
-    swal("Selamat", "{!! Session::get('success') !!}", "success", {
-        button: "OK",
-    });
-</script>
-@endif
+
+
 
 @endsection

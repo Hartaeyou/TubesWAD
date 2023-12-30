@@ -19,7 +19,7 @@
                 <div class="col-6">
                     <div class="header">
                         <h1>Selamat Datang</h1>
-                        <p>Selamat Datang dan Isi Username Dan Password</p>      
+                        <p>Selamat Datang dan Isi Email Dan Password</p>      
                     </div>                
                     <div class="login-form">
                         <form action="{{route('login-user')}}" method="post">
@@ -34,10 +34,6 @@
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" class="form-control" id="password" name="password" placeholder="Masukan Password" value="{{old('password')}}">
                                 <span class="text-danger">@error("password") {{$message}} @enderror</span>
-                            </div>
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="remember" name="remember">
-                                <label class="form-check-label" for="remember" >Ingatakan Saya</label>
                             </div>
                             <button type="submit" class="btn btn-primary" name="login">User Login</button>
                         </form>
@@ -66,11 +62,18 @@
 
     
 </body>
-@if(Session::has("Fail"))
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js" integrity="sha512-7VTiy9AhpazBeKQAlhaLRUk+kAMAb8oczljuyJHPsVPWox/QIXDFOnT9DUk1UC8EbnHKRdQowT7sOBe7LAjajQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+@if(Session::has("Fail"))
 <script>
     swal("Gagal", "{!! Session::get('Fail') !!}", "error", {
+        button: "OK",
+    });
+</script>
+@endif
+@if(Session::has("Success"))
+<script>
+    swal("Selamat", "{!! Session::get('Success') !!}", "success", {
         button: "OK",
     });
 </script>

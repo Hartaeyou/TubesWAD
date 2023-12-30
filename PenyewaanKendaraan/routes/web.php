@@ -9,8 +9,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\tambahmobilcontroller;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\mitraController;
+use App\Http\Controllers\pelangganController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\mitraController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +53,8 @@ Route::post('/formSubmit', [PemesananController::class, 'formSubmit'])->name('fo
 Route::get('/tablePemesanan', [PemesananController::class, 'showTable'])->middleware("islogIn")->name("tablePemesanan");
 Route::get('/formUpdatePemesanan/{id}', [PemesananController::class, 'formUpdate'])->name("formUpdatePemesanan")->middleware("islogIn");
 Route::get('/updatedData/{id}', [PemesananController::class, 'update'])->name("updatedData");
+Route::get('/delete/{id}', [PemesananController::class, 'delete'])->name("delete");
+
 // dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware("islogIn");
 
@@ -61,6 +64,14 @@ Route::get('/pembayaran', [PembayaranController::class, 'index']);
 // Ghifary
 Route::get('/admin', [adminController::class, 'index']);
 
-// Hafizh
+// azri
+Route::get('/tambahPelanggan', [pelangganController::class, 'index']);
+Route::get('/tabelPelanggan', [pelangganController::class, 'showTabelPelanggan']);
+Route::get('/detailPelanggan', [pelangganController::class, 'showDetail']);
+Route::get('/editPelanggan', [pelangganController::class, 'showEdit']);
+Route::get('/homePelanggan', [pelangganController::class, 'showHome']);
+Route::get('/tambahPelangganBaru',[pelangganController::class,'formTambah'])->name('tambahPelangganBaru');
+
+//Hafizh
 Route::get('/mitra', [mitraController::class, 'index']);
 Route::get('/tableMitra', [mitraController::class, 'showTable'])->name('tampilanMitra');
