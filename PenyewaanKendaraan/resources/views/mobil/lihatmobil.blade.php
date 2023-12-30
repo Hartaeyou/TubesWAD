@@ -1,13 +1,12 @@
 @extends ('layout.main')
 
 @section('title')
-<title>Perbaruan Data</title>
+<title>Pemesanan</title>
 @endsection
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" integrity="sha512-gOQQLjHRpD3/SEOtalVq50iDn4opLVup2TF8c4QPI3/NmUPNZOk2FG0ihi8oCU/qYEsw4P6nuEZT2lAG0UNYaw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @section('cssfile')
-<link rel="stylesheet" href="{ URL('cssFile/cssTampilan.css) }}">
+<link rel="stylesheet" href="{ URL('cssFile/tablePemesanan.css) }}">
 @endsection
 
 @section('content')
@@ -36,12 +35,44 @@
                     <td>{{$m->plat_mobil}}</td>
                     <td>{{$m->mitra_mobil}}</td>
                     <td><a href="{{ url('updatemobil', $m->id) }}" class="btn btn-primary">Update</a>
-                    <a href= "{{ url('delete-mobil', $m->id) }}" class="btn btn-danger">Delete</a></td>
+                    <a href= "#" class="btn btn-danger delete" data-id="{{$m->id}}" data-nama="{{$m->nama_mobil}}">Delete</a></td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
+
+    <script>
+$('.delete').click(function(){
+    var nama_mobil = $(this).attr('data-nama');
+    var idMobil = $(this).attr('data-id');
+    swal({
+        title: "Apakah Anda Yakin?",
+        text: "Anda akan menghapus data mobil " +nama_mobil+" dengan ID "+idMobil+" ",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+    .then((willDelete) => {
+        if (willDelete) {
+            window.location="/delete-mobil/"+idMobil+""
+            swal("Data Berhasil Dihapus", {
+                icon: "success",
+            });
+        } else {
+            swal("Data Tidak Jadi Dihapus");
+        }
+    });
+})
+</script>
+
+@if(Session::has("success"))
+<script>
+    swal("Berhasil", "{!! Session::get('success') !!}", "success", {
+        button: "OK",
+    });
+@endif
+</script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
