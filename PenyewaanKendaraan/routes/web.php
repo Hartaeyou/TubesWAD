@@ -9,6 +9,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\tambahmobilcontroller;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\mitraController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,3 +60,7 @@ Route::get('/pembayaran', [PembayaranController::class, 'index']);
 
 // Ghifary
 Route::get('/admin', [adminController::class, 'index']);
+
+// Hafizh
+Route::get('/mitra', [mitraController::class, 'index']);
+Route::get('/tableMitra', [mitraController::class, 'showTable'])->name('tampilanMitra');

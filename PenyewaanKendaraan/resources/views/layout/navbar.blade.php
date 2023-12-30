@@ -1,6 +1,6 @@
 <!-- Nav -->
 <nav class="navbar nav-underline navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/dashboard">
         <img src="{{ URL('img/logo.png') }}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
             SeKa
     </a>
@@ -12,7 +12,7 @@
         <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
             <ul class="navbar-nav text-center" >
                 <li class="nav-item">
-                    <a class="nav-link "  href="#">Mitra</a>
+                    <a class="nav-link "  href="/mitra">Mitra</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Pelanggan</a>
