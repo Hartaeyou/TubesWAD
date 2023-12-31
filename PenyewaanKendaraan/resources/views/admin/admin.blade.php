@@ -6,35 +6,47 @@
 
 @section('content')
     <div class="container text-center mt-4">
-        <div class="mt-4">
-            <h2 style="font-weight: bold;">Daftar Karyawan</h2>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nama</th>
-                        <th>Email</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($employees as $employee)
+        <div class="row mt-4">
+            <div class="col-12">
+                <h2 style="font-weight: bold;">Daftar Karyawan</h2>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12">
+                <!-- Move the Tambah button to the left -->
+                <a href="{{ route('admin.create') }}" class="btn btn-success">Tambah</a>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <table class="table table-bordered">
+                    <thead>
                         <tr>
-                            <td>{{ $employee->id }}</td>
-                            <td>{{ $employee->name }}</td>
-                            <td>{{ $employee->email }}</td>
-                            <td>
-                                <a href="{{ route('admin.edit', ['id' => $employee->id]) }}" class="btn btn-sm btn-primary">Edit</a>
-                                <form action="{{ route('admin.delete', ['id' => $employee->id]) }}" method="post" style="display:inline;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
-                                </form>
-                            </td>
+                            <th>ID</th>
+                            <th>Nama</th>
+                            <th>Email</th>
+                            <th>Action</th>
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach ($employees as $employee)
+                            <tr>
+                                <td>{{ $employee->id }}</td>
+                                <td>{{ $employee->name }}</td>
+                                <td>{{ $employee->email }}</td>
+                                <td>
+                                    <a href="{{ route('admin.edit', ['id' => $employee->id]) }}" class="btn btn-sm btn-primary">Edit</a>
+                                    <form action="{{ route('admin.delete', ['id' => $employee->id]) }}" method="post" style="display:inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 

@@ -64,7 +64,13 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware("isl
 Route::get('/pembayaran', [PembayaranController::class, 'index']);
 
 // Ghifary
-Route::get('/admin', [adminController::class, 'index']);
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.view');
+Route::get('/admin/create', [AdminController::class, 'create'])->name('admin.create');
+Route::post('/admin/store', [AdminController::class, 'store'])->name('admin.store');
+Route::get('/admin/edit/{id}', [AdminController::class, 'edit'])->name('admin.edit');
+Route::put('/admin/update/{id}', [AdminController::class, 'update'])->name('admin.update');
+Route::delete('/admin/delete/{id}', [AdminController::class, 'destroy'])->name('admin.delete');
+Route::get('/admin/settings', [AdminController::class, 'settings'])->name('admin.settings');
 
 // azri
 Route::get('/tambahPelanggan', [pelangganController::class, 'index']);

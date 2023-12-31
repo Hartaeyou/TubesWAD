@@ -21,6 +21,7 @@
         <a class="btn btn-dark btn-lg" href="">Tambah Pelanggan</a>
         <a class="btn btn-dark btn-lg" href="">Tambah Mitra</a>
         <a class="btn btn-dark btn-lg" href="">Pembayaran</a>
+        <a class="btn btn-dark btn-lg" href="/admin">Admin</a>
         </div>
     </div>
 @endsection
