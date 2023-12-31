@@ -30,7 +30,7 @@
                     @else
                         <a href="{{ route('processPayment', $pemesanan->id) }}" class="btn btn-success">Process Payment</a>
                     @endif
-                        <a href="{{ route('deleteOrder', $pemesanan->id) }}" class="btn btn-outline-danger" onclick="return confirm('Are you sure?')">Delete</a>
+                    <a href="{{ route('deleteOrder', $pemesanan->id) }}" class="btn btn-outline-danger" onclick="return confirm('Are you sure?')">Delete</a>
                 </td>
             </tr>
             @endforeach
