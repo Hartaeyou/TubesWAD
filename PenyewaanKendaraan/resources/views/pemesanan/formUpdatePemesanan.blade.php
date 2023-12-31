@@ -40,7 +40,7 @@
                 </div>
                 <div class="mb-3"> 
                     <label for="pembayaran" class="form-label">Pembayaran</label>                 
-                    <select class="form-select" aria-label="Default select example" name="pembayaran">
+                    <select class="form-select" aria-label="Default select example" name="pembayaran" disabled>
                         <option selected>{{ $updateForm->pembayaran }}</option>
                         <option value="DP">DP</option>
                         <option value="Lunas">Lunas</option>

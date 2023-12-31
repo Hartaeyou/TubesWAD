@@ -15,7 +15,6 @@ return new class extends Migration
             $table->string('warna_mobil');
             $table->string('plat_mobil');
             $table->string('mitra_mobil');
-            $table->boolean('status');
             $table->timestamps();
         });
     }
