@@ -1,7 +1,7 @@
 @extends ('layout.main')
 
 @section('title')
-<title>Pemesanan</title>
+<title>List Data Pelanggan</title>
 @endsection
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
@@ -30,7 +30,7 @@
                     <td>{{$pelanggan->nama_customer}}</td>
                     <td>{{$pelanggan->nomor_telepon}}</td>
                     <td>{{$pelanggan->email_customer}}</td>
-                    <td><a href="{{ url('detailPelanggan', $pelanggan->id) }}" class="btn btn-primary">Simpan</a>
+                    <td><a href="{{ url('detailPelanggan', $pelanggan->id) }}" class="btn btn-primary">Ubah</a>
                     <a href= "#" class="btn btn-danger delete" data-id="{{$pelanggan->id}}" data-nama="{{$pelanggan->nama_customer}}">Delete</a></td>
                 </tr>
                 @endforeach

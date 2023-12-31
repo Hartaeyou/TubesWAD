@@ -1,12 +1,15 @@
 @extends ('layout.main')
 
-@section('content')
+@section('title')
+<title>Tambah Pelanggan</title>
+@endsection
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" integrity="sha512-gOQQLjHRpD3/SEOtalVq50iDn4opLVup2TF8c4QPI3/NmUPNZOk2FG0ihi8oCU/qYEsw4P6nuEZT2lAG0UNYaw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @section('cssfile')
 <link rel="stylesheet" href="{ URL('cssFile/cssTampilan.css) }}">
 @endsection
 
+@section('content')
 <body>
 <h1 style="text-align : center;">Tambah Data Pelanggan</h1>
     <div class="container" style="margin-top : 20px;">

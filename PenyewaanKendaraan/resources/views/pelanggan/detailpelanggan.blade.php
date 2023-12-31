@@ -1,7 +1,7 @@
 @extends ('layout.main')
 
 @section('title')
-<title>Perbaruan Data</title>
+<title>Ubah Data Pelanggan</title>
 @endsection
 
 <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
@@ -36,7 +36,7 @@
                         </div>
 
                         <div class="d-grid gap-2 col-10 mx-auto mt-4">
-                            <button type="submit" class="btn btn-primary">Update</button>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
                         </div>
                         <div class="d-grid gap-2 col-10 mx-auto mt-3">
                             <a class="btn btn-danger" href="{{ route('tabelPelanggan') }}">Kembali</a>

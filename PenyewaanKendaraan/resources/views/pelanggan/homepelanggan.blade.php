@@ -1,17 +1,18 @@
 @extends ('layout.main')
 
+@section('title')
+<title>Pelanggan</title>
+@endsection
+
+<script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" integrity="sha512-gOQQLjHRpD3/SEOtalVq50iDn4opLVup2TF8c4QPI3/NmUPNZOk2FG0ihi8oCU/qYEsw4P6nuEZT2lAG0UNYaw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+@section('cssfile')
+<link rel="stylesheet" href="{ URL('cssFile/cssTampilan.css) }}">
+@endsection
+
 @section('content')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
-
-<body>
-<div class="grid text-center">
+    <div class="grid text-center">
         <div>
             <h1 style="font-weight: bold; margin-top : 30px">Pelanggan</h1>
         </div>
@@ -20,9 +21,12 @@
         </div>
         <div><p> </p></div>
         <div class="d-grid gap-2 col-3 mx-auto">
-        <button type="button" class="btn btn-dark">Lihat</button>
-        <button type="submit" class="btn btn-dark">Tambah</button>
+        <button type="button" class="btn btn-dark" onclick="window.location='{{ route("tabelPelanggan") }}'">Lihat</button>
+        <button type="submit" class="btn btn-dark" onclick="window.location='{{ route("tambahPelanggan") }}'">Tambah</button>
         </div>
     </div>
-</body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 @endsection

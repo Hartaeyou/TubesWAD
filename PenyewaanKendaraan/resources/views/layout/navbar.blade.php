@@ -15,7 +15,7 @@
                     <a class="nav-link "  href="/mitra">Mitra</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pelanggan</a>
+                    <a class="nav-link" href="{{ route("homePelanggan") }}">Pelanggan</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route("mobil") }}">Mobil</a>
