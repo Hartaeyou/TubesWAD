@@ -7,13 +7,65 @@ use Illuminate\Http\Request;
 
 class mitraController extends Controller
 {
-    public function showTable()
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
     {
-        // Fetch data from the Mitra model
+        // ambil data dari model mitra
         $data_mitra = Mitra::all();
 
-        // Pass data to the view
+        // kirim ke view
         return view('mitra.tampilanMitra', compact('data_mitra'));
     }
-}
 
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
+        return view('mitra.tambahMitra');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        //
+        return request();
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(Mitra $mitra)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Mitra $mitra)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, Mitra $mitra)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Mitra $mitra)
+    {
+        //
+    }
+}

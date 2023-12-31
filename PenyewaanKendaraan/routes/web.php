@@ -11,7 +11,7 @@ use App\Http\Controllers\tambahmobilcontroller;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\pelangganController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\mitraController;
+use App\Http\Controllers\MitraController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,4 +75,4 @@ Route::get('/homePelanggan', [pelangganController::class, 'showHome']);
 Route::get('/tambahPelangganBaru',[pelangganController::class,'formTambah'])->name('tambahPelangganBaru');
 
 //Hafizh
-Route::get('/mitra', [mitraController::class, 'showTable'])->name('tampilanMitra')->middleware('islogIn');
+Route::resource('/mitra', MitraController::class)->middleware("islogIn");
