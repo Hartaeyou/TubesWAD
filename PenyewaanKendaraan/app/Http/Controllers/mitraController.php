@@ -76,5 +76,8 @@ class mitraController extends Controller
     public function destroy(Mitra $mitra)
     {
         //
+        Mitra::destroy($mitra->id);
+
+        return redirect('/mitra')->with('success','Anda telah menghapus data mitra');
     }
 }

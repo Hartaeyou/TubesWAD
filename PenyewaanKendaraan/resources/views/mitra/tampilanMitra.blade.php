@@ -10,7 +10,14 @@
 
 @section('content')
 <h1 class="d-flex justify-content-center">Table Mitra</h1>
+
+@if(session()->has('success'))
+    <div class="alert alert-success" role="alert">
+        {{ session('success') }}
+    </div>
+@endif
 <div class="d-flex justify-content-center align-items-center" style="min-height: 35vh;">    
+
     <div class="container">
         <a class="btn btn-primary" href="/mitra/create">+Tambah</a>
         <br><br>
@@ -33,7 +40,11 @@
                 <td>{{$mitra["alamat_mitra"]}}</td>
                 <td>
                     <a class="btn btn-outline-info"href="#">Edit</a>
-                    <a class="btn btn-outline-danger"href="">Hapus</a>
+                    <form action="/mitra/{{ $mitra->id }}" method="post" class="d-inline">
+                        @method('delete')
+                        @csrf
+                        <button class="btn btn-outline-danger" onclick="return confirm('Ingin menghapus data?')">Hapus</button>
+                    </form>
                 </td>
             </tbody>
             @endforeach
