@@ -63,6 +63,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware("isl
 
 // Rismawan
 Route::get('/pembayaran', [PembayaranController::class, 'index']);
+Route::get('/pembayaran/delete/{id}', [PembayaranController::class, 'deleteOrder'])->name('deleteOrder');
 
 // Ghifary
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.view');
