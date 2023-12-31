@@ -63,7 +63,7 @@ $('.delete').click(function(){
     })
     .then((willDelete) => {
         if (willDelete) {
-            window.location="/delete/"+idPemesan+""
+            window.location="/delete-pemesanan/"+idPemesan+""
             swal("Data Telah Dihapus", {
                 icon: "success",
             });
