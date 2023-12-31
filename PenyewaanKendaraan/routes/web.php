@@ -64,6 +64,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware("isl
 
 // Rismawan
 Route::get('/pembayaran', [PembayaranController::class, 'index']);
+Route::get('/tempatPembayaran', [PembayaranController::class, 'index'])->name('tempatPembayaran');
+Route::get('/pembayaran/lunaskan/{id}', [PembayaranController::class, 'lunaskan'])->name('lunaskan');
+Route::get('/pembayaran/processPayment/{id}', [PembayaranController::class, 'processPayment'])->name('processPayment');
 Route::get('/pembayaran/delete/{id}', [PembayaranController::class, 'deleteOrder'])->name('deleteOrder');
 
 // Ghifary
