@@ -60,6 +60,9 @@ class mitraController extends Controller
     public function edit(Mitra $mitra)
     {
         //
+        return view('mitra.editMitra', [
+        'mitra' => $mitra,
+        ]);
     }
 
     /**
@@ -68,6 +71,17 @@ class mitraController extends Controller
     public function update(Request $request, Mitra $mitra)
     {
         //
+        //
+        $validatedData = $request->validate([
+            'nama_mitra' => 'required|max:255',
+            'nomor_telepon' => 'required|max:13',
+            'alamat_mitra'  => 'required',
+        ]);
+
+        Mitra::where('id',$mitra->id)
+                ->update( $validatedData );
+
+        return redirect('/mitra')->with('success','Anda telah mengedit data mitra');
     }
 
     /**

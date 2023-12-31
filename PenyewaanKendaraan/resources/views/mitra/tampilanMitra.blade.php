@@ -39,7 +39,7 @@
                 <td>{{$mitra["nomor_telepon"]}}</td>
                 <td>{{$mitra["alamat_mitra"]}}</td>
                 <td>
-                    <a class="btn btn-outline-info"href="#">Edit</a>
+                    <a class="btn btn-outline-info"href="/mitra/{{ $mitra->id }}/edit">Edit</a>
                     <form action="/mitra/{{ $mitra->id }}" method="post" class="d-inline">
                         @method('delete')
                         @csrf
