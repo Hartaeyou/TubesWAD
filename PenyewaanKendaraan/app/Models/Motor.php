@@ -15,6 +15,5 @@ class Motor extends Model
         'warna_motor',
         'plat_motor',
         'mitra_motor',
-        'status'
     ];
 }

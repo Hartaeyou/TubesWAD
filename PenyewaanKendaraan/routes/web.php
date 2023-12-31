@@ -24,14 +24,15 @@ use App\Http\Controllers\MitraController;
 |
 */
 
-
-
-
 // devi
-Route::get('/motor', [motorController::class, 'index'])->name('motor');
-Route::get('/lihatmotor', [motorController::class, 'show'])->name('lihatmotor');
-Route::get('/setailmotor', [motorController::class, 'detail'])->name('detailmotor');
-Route::get('/tambahmotor', [motorController::class, 'tambah'])->name('tambahmotor');
+Route::get('/motor', [motorController::class, 'index'])->name('motor')->middleware("islogIn");
+Route::get('/listmotor', [MotorController::class, 'list'])->name('listmotor')->middleware("islogIn");
+Route::get('/lihatmotor', [motorController::class, 'show'])->name('lihatmotor')->middleware("islogIn");
+Route::get('/detailmotor', [motorController::class, 'detail'])->name('detailmotor')->middleware("islogIn");
+Route::get('/tambahmotor', [motorController::class, 'tambah'])->name('tambahmotor')->middleware("islogIn");
+Route::get('/updatemotor/{id}', [MotorController::class, 'update'])->name('updatemotor')->middleware("islogIn");
+Route::post('/updatemotor/{id}', [MotorController::class, 'updateMotor'])->name('updateMotor')->middleware("islogIn");
+Route::delete('/delete/{id}', [MotorController::class, 'delete'])->name('deleteMotor')->middleware("islogIn");
 
 // dasheva
 Route::get('/mobil', [mobilcontroller::class,'index'])->name('mobil')->middleware("islogIn");
@@ -64,13 +65,20 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware("isl
 Route::get('/pembayaran', [PembayaranController::class, 'index']);
 
 // Ghifary
-Route::get('/admin', [adminController::class, 'index']);
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.view');
+Route::get('/admin/create', [AdminController::class, 'create'])->name('admin.create');
+Route::post('/admin/store', [AdminController::class, 'store'])->name('admin.store');
+Route::get('/admin/edit/{id}', [AdminController::class, 'edit'])->name('admin.edit');
+Route::put('/admin/update/{id}', [AdminController::class, 'update'])->name('admin.update');
+Route::delete('/admin/delete/{id}', [AdminController::class, 'destroy'])->name('admin.delete');
+Route::get('/admin/settings', [AdminController::class, 'settings'])->name('admin.settings');
 
 // azri
 Route::get('/tambahPelanggan', [pelangganController::class, 'index']);
-Route::get('/tabelPelanggan', [pelangganController::class, 'showTabelPelanggan']);
-Route::get('/detailPelanggan', [pelangganController::class, 'showDetail']);
-Route::get('/editPelanggan', [pelangganController::class, 'showEdit']);
+Route::get('/tabelPelanggan', [pelangganController::class, 'showTabelPelanggan'])->name('tabelPelanggan');
+Route::get('/detailPelanggan/{id}', [pelangganController::class, 'showDetail'])->name('detailPelanggan');
+Route::get('/ubahData/{id}', [pelangganController::class, 'ubah'])->name('ubahData');
+Route::get('/hapusData/{id}', [pelangganController::class, 'hapus'])->name('hapusData');
 Route::get('/homePelanggan', [pelangganController::class, 'showHome']);
 Route::get('/tambahPelangganBaru',[pelangganController::class,'formTambah'])->name('tambahPelangganBaru');
 
