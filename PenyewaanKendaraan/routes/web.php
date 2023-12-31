@@ -74,13 +74,13 @@ Route::delete('/admin/delete/{id}', [AdminController::class, 'destroy'])->name('
 Route::get('/admin/settings', [AdminController::class, 'settings'])->name('admin.settings');
 
 // azri
-Route::get('/tambahPelanggan', [pelangganController::class, 'index'])->name('tambahPelanggan');
-Route::get('/tabelPelanggan', [pelangganController::class, 'showTabelPelanggan'])->name('tabelPelanggan');
-Route::get('/detailPelanggan/{id}', [pelangganController::class, 'showDetail'])->name('detailPelanggan');
-Route::get('/ubahData/{id}', [pelangganController::class, 'ubah'])->name('ubahData');
-Route::get('/hapusData/{id}', [pelangganController::class, 'hapus'])->name('hapusData');
-Route::get('/homePelanggan', [pelangganController::class, 'showHome'])->name('homePelanggan');
-Route::get('/tambahPelangganBaru',[pelangganController::class,'formTambah'])->name('tambahPelangganBaru');
+Route::get('/tambahPelanggan', [pelangganController::class, 'index'])->name('tambahPelanggan')->middleware("islogIn");
+Route::get('/tabelPelanggan', [pelangganController::class, 'showTabelPelanggan'])->name('tabelPelanggan')->middleware("islogIn");
+Route::get('/detailPelanggan/{id}', [pelangganController::class, 'showDetail'])->name('detailPelanggan')->middleware("islogIn");
+Route::get('/ubahData/{id}', [pelangganController::class, 'ubah'])->name('ubahData')->middleware("islogIn");
+Route::get('/hapusData/{id}', [pelangganController::class, 'hapus'])->name('hapusData')->middleware("islogIn");
+Route::get('/homePelanggan', [pelangganController::class, 'showHome'])->name('homePelanggan')->middleware("islogIn");
+Route::get('/tambahPelangganBaru',[pelangganController::class,'formTambah'])->name('tambahPelangganBaru')->middleware("islogIn");
 
 //Hafizh
 Route::resource('/mitra', MitraController::class)->middleware("islogIn");
