@@ -13,23 +13,11 @@ class motorController extends Controller
         return view('motor\tampilanmotor');
     }
 
-
-    public function tambah()
-    {
-        return view('motor\tambahmotor');
-    }
-
     public function list()
     {
         $motors = Motor::all();
         return view('motor\listmotor', ['motors' => $motors]);
     }
-
-    public function detail()
-    {
-        return view('motor\detailmotor');
-    }
-
 
     public function store(Request $request)
     {
@@ -53,7 +41,6 @@ class motorController extends Controller
         }else{
             return back();
         }
-        
     }    
 
     public function update($id)

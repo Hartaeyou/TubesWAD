@@ -44,7 +44,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="text-center font-weight-bold" style="font-weight: bold; margin-top: 20px; margin-bottom: 30px">Detail Motor</h1>
+        <h2 class="text-center font-weight-bold" style="font-weight: bold; margin-top: 20px; margin-bottom: 30px">Detail Motor</h2>
         <div class="card">
             <div class="card-header">
                 <b>Motor Information</b>

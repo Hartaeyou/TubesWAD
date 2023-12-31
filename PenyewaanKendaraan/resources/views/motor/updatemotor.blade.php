@@ -1,4 +1,4 @@
-@extends('layout.main')
+{{-- @extends('layout.main')
 
 @section('cssfile')
     <link rel="stylesheet" href="{{ URL('cssFile/cssTampilan.css') }}">
@@ -70,4 +70,109 @@
         </div>
     </section>
 
+@endsection --}}
+
+@extends('layout.main')
+
+@section('cssfile')
+    <link rel="stylesheet" href="{{ URL('cssFile/cssTampilan.css') }}">
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        #form {
+            margin-top: 30px;
+        }
+
+        /* Customize form styles */
+        .form-control {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        /* Add styles for the submit button */
+        .btn-success {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+        }
+    </style>
+@endsection
+
+@section('content')
+    <div class="container">
+        <h2 class="text-center font-weight-bold" style="font-weight: bold; margin-top: 20px; margin-bottom: 30px">Update Data Motor</h2>
+        <div class="card">
+            <div class="card-header">
+                <b>Motor Information</b>
+            </div>
+                <div class="card-body">
+                    <form class="needs-validation" novalidate action="{{ route('updateMotor', $motor->id) }}" method="POST"
+                        enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group">
+                            <label for="inputNama">Nama Motor</label>
+                            <input class="form-control" id="inputNama" name="nama" type="text" required
+                                placeholder="Masukkan Nama Motor" value="{{ old('nama', $motor->nama_motor) }}">
+                            <div class="invalid-feedback">
+                                Please provide a valid name.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputBrand">Brand Motor</label>
+                            <input class="form-control" id="inputBrand" name="brand" type="text" required
+                                placeholder="Masukkan Merk Motor" value="{{ old('brand', $motor->brand_motor) }}">
+                            <div class="invalid-feedback">
+                                Please provide a valid brand.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputWarna">Warna Motor</label>
+                            <input class="form-control" id="inputWarna" name="warna" type="text" required
+                                placeholder="Masukkan Warna Motor" value="{{ old('warna', $motor->warna_motor) }}">
+                            <div class="invalid-feedback">
+                                Please provide a valid color.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPlat">Plat Motor</label>
+                            <input class="form-control" id="inputPlat" name="plat" type="text" required
+                                placeholder="Masukkan Plat Motor" value="{{ old('plat', $motor->plat_motor) }}">
+                            <div class="invalid-feedback">
+                                Please provide a valid plate number.
+                            </div>
+                        </div>
+                        <div class="btn-container">
+                            <button class="btn btn-success" type="submit" style="margin-top: 20px;">Simpan</button>
+                            <a href="{{ route('motor') }}" class="btn btn-danger">Batal</a>
+                        </div>
+                    </form>
+                </div>
+            <div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                var forms = document.getElementsByClassName('needs-validation');
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
 @endsection
