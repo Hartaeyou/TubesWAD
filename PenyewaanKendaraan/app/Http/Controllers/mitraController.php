@@ -37,7 +37,7 @@ class mitraController extends Controller
         //
         $validatedData = $request->validate([
             'nama_mitra' => 'required|max:255',
-            'nomor_telepon' => 'required',
+            'nomor_telepon' => 'required|max:13',
             'alamat_mitra'  => 'required',
         ]);
 

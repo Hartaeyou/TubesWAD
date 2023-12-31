@@ -19,7 +19,7 @@
         <a class="btn btn-dark btn-lg" href="/motor">Tambah Motor</a>
         <a class="btn btn-dark btn-lg" href="/mobil">Tambah Mobil</a>
         <a class="btn btn-dark btn-lg" href="/homePelanggan">Pelanggan</a>
-        <a class="btn btn-dark btn-lg" href="">Tambah Mitra</a>
+        <a class="btn btn-dark btn-lg" href="/mitra/create">Tambah Mitra</a>
         <a class="btn btn-dark btn-lg" href="">Pembayaran</a>
         <a class="btn btn-dark btn-lg" href="/admin">Admin</a>
         </div>

@@ -28,11 +28,12 @@ use App\Http\Controllers\MitraController;
 Route::get('/motor', [motorController::class, 'index'])->name('motor')->middleware("islogIn");
 Route::get('/listmotor', [MotorController::class, 'list'])->name('listmotor')->middleware("islogIn");
 Route::get('/lihatmotor', [motorController::class, 'show'])->name('lihatmotor')->middleware("islogIn");
-Route::get('/detailmotor', [motorController::class, 'detail'])->name('detailmotor')->middleware("islogIn");
 Route::get('/tambahmotor', [motorController::class, 'tambah'])->name('tambahmotor')->middleware("islogIn");
+Route::post('/motor', [motorController::class, 'store'])->name('motor.store')->middleware("islogIn");
 Route::get('/updatemotor/{id}', [MotorController::class, 'update'])->name('updatemotor')->middleware("islogIn");
 Route::post('/updatemotor/{id}', [MotorController::class, 'updateMotor'])->name('updateMotor')->middleware("islogIn");
-Route::delete('/delete/{id}', [MotorController::class, 'delete'])->name('deleteMotor')->middleware("islogIn");
+Route::delete('/delete-motor/{id}', [MotorController::class, 'delete'])->name('deleteMotor')->middleware("islogIn");
+Route::get('/detailmotor/{id}', [MotorController::class, 'detailmotor'])->name('detailmotor')->middleware("islogIn");
 
 // dasheva
 Route::get('/mobil', [mobilcontroller::class,'index'])->name('mobil')->middleware("islogIn");
@@ -63,6 +64,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware("isl
 
 // Rismawan
 Route::get('/pembayaran', [PembayaranController::class, 'index']);
+Route::get('/pembayaran/delete/{id}', [PembayaranController::class, 'deleteOrder'])->name('deleteOrder');
 
 // Ghifary
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.view');
