@@ -25,7 +25,6 @@
                 <div class="mb-3"> 
                     <label for="jenisKendaraan" class="form-label">Pilih Jenis Kendaraan</label>                 
                     <select class="form-select" aria-label="Default select example" name="jenisKendaraan">
-                        <option selected>Jenis Kendaraan</option>
                         <option value="Mobil">Mobil</option>
                         <option value="Motor">Motor</option>
                     </select>
