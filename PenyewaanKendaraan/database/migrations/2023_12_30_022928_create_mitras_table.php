@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('data_mitra', function (Blueprint $table) {
             $table->id();
             $table->string('nama_mitra');
-            $table->integer('nomor_telepon');
+            $table->string('nomor_telepon');
             $table->string('alamat_mitra');
             $table->timestamps();
         });
