@@ -32,7 +32,7 @@ Route::get('/tambahmotor', [motorController::class, 'tambah'])->name('tambahmoto
 Route::post('/motor', [motorController::class, 'store'])->name('motor.store')->middleware("islogIn");
 Route::get('/updatemotor/{id}', [MotorController::class, 'update'])->name('updatemotor')->middleware("islogIn");
 Route::post('/updatemotor/{id}', [MotorController::class, 'updateMotor'])->name('updateMotor')->middleware("islogIn");
-Route::delete('/delete-motor/{id}', [MotorController::class, 'delete'])->name('deleteMotor')->middleware("islogIn");
+Route::delete('/deletemotor/{id}', [MotorController::class, 'delete'])->name('deleteMotor')->middleware("islogIn");
 Route::get('/detailmotor/{id}', [MotorController::class, 'detailmotor'])->name('detailmotor')->middleware("islogIn");
 
 // dasheva

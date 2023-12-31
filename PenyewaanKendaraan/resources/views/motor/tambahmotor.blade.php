@@ -6,8 +6,8 @@
     <style>
         .card {
             display: flex;
+            flex-direction: column;
             width: 800px;
-            margin: auto;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
@@ -41,7 +41,7 @@
 
 @section('content')
     <div class="container">
-        <div class="card">
+        <div class="card" style="justify-content: center; align-items: center;">
             <div class="form-container">
                 <div style="text-align: center;">
                     <h2 style="font-weight: bold; margin-top: 20px; margin-bottom: 30px">Tambah Data Motor</h2>
@@ -73,7 +73,7 @@
                         </form>
                     </th>
                     <th>
-                        <div style="flex: 1; text-align: right;">
+                        <div class="d-flex flex-column justify-content-between">
                             <img src="{{ URL('img/logo.png') }}" class="card-img-top" alt="logo">
                         </div>
                     </th>

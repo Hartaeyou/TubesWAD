@@ -9,7 +9,7 @@
 
 @section('content')
     <div class="container">
-        <h1 style="font-weight: bold; margin-top: 30px; margin-bottom: 30px">List Data Motor</h1>
+        <h2 style="font-weight: bold; margin-top: 30px; margin-bottom: 30px">List Data Motor</h2>
         <div>
             <table class="table" style="text-align: center">
                 <thead>
@@ -56,7 +56,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
-                        url: "{{ url('/delete') }}/" + id,
+                        url: "{{ url('/deletemotor') }}/" + id,
                         type: 'DELETE',
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
