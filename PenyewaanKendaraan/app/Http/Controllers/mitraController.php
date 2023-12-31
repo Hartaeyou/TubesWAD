@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mitra;
+use Illuminate\Contracts\Support\ValidatedData;
 use Illuminate\Http\Request;
 
 class mitraController extends Controller
@@ -34,7 +35,15 @@ class mitraController extends Controller
     public function store(Request $request)
     {
         //
-        return request();
+        $validatedData = $request->validate([
+            'nama_mitra' => 'required|max:255',
+            'nomor_telepon' => 'required',
+            'alamat_mitra'  => 'required',
+        ]);
+
+        Mitra::create($validatedData);
+
+        return redirect('/mitra')->with('success','Anda telah menambahkan mitra');
     }
 
     /**

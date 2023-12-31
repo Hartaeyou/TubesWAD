@@ -20,19 +20,19 @@
                 @csrf
                 <div class="mb-3">
                     <label for="nama_mitra" class="form-label">Nama Mitra</label>
-                    <input type="text" class="form-control" id="nama_mitra" name="nama_mitra">
+                    <input type="text" class="form-control" id="nama_mitra" name="nama_mitra" value="{{ old('nama_mitra') }}">
                     <span class="text-danger">@error("nama_mitra") {{$message}} @enderror</span>
                 </div>
 
                 <div class="mb-3">
                     <label for="nomor_telepon" class="form-label">Nomor Telepon</label>
-                    <input type="text" class="form-control" id="nomor_telepon" name="nomor_telepon">
+                    <input type="number" class="form-control" id="nomor_telepon" name="nomor_telepon" value="{{ old('nomor_telepon') }}">
                     <span class="text-danger">@error("nomor_telepon") {{$message}} @enderror</span>
                 </div>
                 
                 <div class="mb-3">
                     <label for="alamat_mitra" class="form-label">Alamat Mitra</label>
-                    <input type="text" class="form-control" id="alamat_mitra" name="alamat_mitra">
+                    <input type="text" class="form-control" id="alamat_mitra" name="alamat_mitra" value="{{ old('alamat_mitra') }}">
                     <span class="text-danger">@error("alamat_mitra") {{$message}} @enderror</span>
                 </div>
                 
@@ -41,7 +41,7 @@
                         <button type="submit" class="btn btn-success perbarui">Perbarui</button>
                     </div>
                     <div class="p-2">
-                        <a class="btn btn-danger" href="{{ route('tablePemesanan')}}">kembali</a>
+                        <a class="btn btn-danger" href="/mitra">kembali</a>
                     </div>
                 </div>
                 </form>
