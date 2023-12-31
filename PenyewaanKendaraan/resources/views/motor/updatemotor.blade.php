@@ -56,48 +56,47 @@
             <div class="card-header">
                 <b>Motor Information</b>
             </div>
-                <div class="card-body">
-                    <form class="needs-validation" novalidate action="{{ route('updatemotor', $motor->id) }}" method="POST"
-                        enctype="multipart/form-data">
-                        @csrf
-                        <div class="form-group">
-                            <label for="inputNama">Nama Motor:</label>
-                            <input class="form-control" id="inputNama" name="nama" type="text" required
-                                placeholder="Masukkan Nama Motor" value="{{ old('nama', $motor->nama_motor) }}">
-                            <div class="invalid-feedback">
-                                Nama motor tidak boleh kosong.
-                            </div>
+            <div class="card-body">
+                <form class="needs-validation" novalidate action="{{ route('updatemotor', $motor->id) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group">
+                        <label for="inputNama">Nama Motor:</label>
+                        <input class="form-control" id="inputNama" name="nama" type="text" required
+                            placeholder="Masukkan Nama Motor" value="{{ old('nama', $motor->nama_motor) }}">
+                        <div class="invalid-feedback">
+                            Nama motor tidak boleh kosong.
                         </div>
-                        <div class="form-group">
-                            <label for="inputBrand">Brand Motor:</label>
-                            <input class="form-control" id="inputBrand" name="brand" type="text" required
-                                placeholder="Masukkan Merk Motor" value="{{ old('brand', $motor->brand_motor) }}">
-                            <div class="invalid-feedback">
-                                Brand motor tidak boleh kosong.
-                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputBrand">Brand Motor:</label>
+                        <input class="form-control" id="inputBrand" name="brand" type="text" required
+                            placeholder="Masukkan Merk Motor" value="{{ old('brand', $motor->brand_motor) }}">
+                        <div class="invalid-feedback">
+                            Brand motor tidak boleh kosong.
                         </div>
-                        <div class="form-group">
-                            <label for="inputWarna">Warna Motor:</label>
-                            <input class="form-control" id="inputWarna" name="warna" type="text" required
-                                placeholder="Masukkan Warna Motor" value="{{ old('warna', $motor->warna_motor) }}">
-                            <div class="invalid-feedback">
-                                Warna motor tidak boleh kosong.
-                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputWarna">Warna Motor:</label>
+                        <input class="form-control" id="inputWarna" name="warna" type="text" required
+                            placeholder="Masukkan Warna Motor" value="{{ old('warna', $motor->warna_motor) }}">
+                        <div class="invalid-feedback">
+                            Warna motor tidak boleh kosong.
                         </div>
-                        <div class="form-group">
-                            <label for="inputPlat">Plat Motor:</label>
-                            <input class="form-control" id="inputPlat" name="plat" type="text" required
-                                placeholder="Masukkan Plat Motor" value="{{ old('plat', $motor->plat_motor) }}">
-                            <div class="invalid-feedback">
-                                Plat motor tidak boleh kosong.
-                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPlat">Plat Motor:</label>
+                        <input class="form-control" id="inputPlat" name="plat" type="text" required
+                            placeholder="Masukkan Plat Motor" value="{{ old('plat', $motor->plat_motor) }}">
+                        <div class="invalid-feedback">
+                            Plat motor tidak boleh kosong.
                         </div>
-                        <div class="btn-container">
-                            <button class="btn btn-success" type="submit">Simpan</button>
-                            <a href="{{ route('listmotor') }}" class="btn btn-danger">Batal</a>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                    <div class="btn-container">
+                        <button class="btn btn-success" type="submit">Simpan</button>
+                        <a href="{{ route('listmotor') }}" class="btn btn-danger">Batal</a>
+                    </div>
+                </form>
+            </div>
             <div>
         </div>
     </div>
