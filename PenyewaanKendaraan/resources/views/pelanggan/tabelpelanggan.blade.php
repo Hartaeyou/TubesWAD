@@ -39,10 +39,8 @@
                 @endforeach
             </tbody>
         </table>
-        <div class="d-flex justify-content-end">
-            {{$data_customer->links()}}
-        </div>
     </div>
+    
     <script>
     $('.delete').click(function(){
         var nama_customer = $(this).attr('data-nama');

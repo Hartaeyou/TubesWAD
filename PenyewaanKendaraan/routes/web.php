@@ -77,7 +77,7 @@ Route::get('/admin/settings', [AdminController::class, 'settings'])->name('admin
 Route::get('/tambahPelanggan', [pelangganController::class, 'index']);
 Route::get('/tabelPelanggan', [pelangganController::class, 'showTabelPelanggan'])->name('tabelPelanggan');
 Route::get('/detailPelanggan/{id}', [pelangganController::class, 'showDetail'])->name('detailPelanggan');
-Route::get('/ubahData/{id}', [pelangganController::class, 'ubah'])->name('ubah');
+Route::get('/ubahData/{id}', [pelangganController::class, 'ubah'])->name('ubahData');
 Route::get('/hapusData/{id}', [pelangganController::class, 'hapus'])->name('hapusData');
 Route::get('/homePelanggan', [pelangganController::class, 'showHome']);
 Route::get('/tambahPelangganBaru',[pelangganController::class,'formTambah'])->name('tambahPelangganBaru');
