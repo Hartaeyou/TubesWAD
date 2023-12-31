@@ -51,7 +51,7 @@ class pelangganController extends Controller
     public function hapus($id){
         $pelanggan = Pelanggan::where('id',$id)->first();
         $pelanggan->delete();
-        return redirect('tabelPelanggan')->with('success', 'Data telah Diganti');
+        return redirect('tabelPelanggan')->with('success', 'Data telah Dihapus');
     }
 
     public function showHome(){
