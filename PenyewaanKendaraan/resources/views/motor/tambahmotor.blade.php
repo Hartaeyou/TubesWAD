@@ -48,7 +48,7 @@
                 </div>
                 <table>
                     <th>
-                        <form action="{{ route('motor.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('tambahmotor') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label for="inputNama">Nama Motor</label>

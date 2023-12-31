@@ -10,13 +10,13 @@ class motorController extends Controller
 
     public function index()
     {
-        return view('motor\tampilanmotor');
+        return view('motor.tampilanmotor');
     }
 
     public function list()
     {
         $motors = Motor::all();
-        return view('motor\listmotor', ['motors' => $motors]);
+        return view('motor.listmotor', ['motors' => $motors]);
     }
 
     public function store(Request $request)

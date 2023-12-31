@@ -26,10 +26,10 @@ use App\Http\Controllers\MitraController;
 
 // devi
 Route::get('/motor', [motorController::class, 'index'])->name('motor')->middleware("islogIn");
-Route::post('/tambahmotor', [motorController::class, 'store'])->name('motor.store')->middleware("islogIn");
+Route::post('/tambahmotor', [motorController::class, 'store'])->name('tambahmotor')->middleware("islogIn");
 Route::get('/listmotor', [MotorController::class, 'list'])->name('listmotor')->middleware("islogIn");
 Route::get('/updatemotor/{id}', [MotorController::class, 'update'])->name('updatemotor')->middleware("islogIn");
-Route::post('/updatemotor/{id}', [MotorController::class, 'updateMotor'])->name('updateMotor')->middleware("islogIn");
+Route::post('/updatemotor/{id}', [MotorController::class, 'updatemotor'])->name('updatemotor')->middleware("islogIn");
 Route::delete('/deletemotor/{id}', [MotorController::class, 'delete'])->name('deleteMotor')->middleware("islogIn");
 Route::get('/detailmotor/{id}', [MotorController::class, 'detailmotor'])->name('detailmotor')->middleware("islogIn");
 

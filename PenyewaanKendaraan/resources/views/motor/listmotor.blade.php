@@ -12,14 +12,14 @@
         <h2 style="font-weight: bold; margin-top: 30px; margin-bottom: 30px">List Data Motor</h2>
         <div>
             <table class="table" style="text-align: center">
-                <thead>
+                <thead class="thead-light">
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Nama Motor</th>
                         <th scope="col">Brand Motor</th>
                         <th scope="col">Warna Motor</th>
                         <th scope="col">Plat Motor</th>
-                        <th scope="col">Action</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,13 +32,16 @@
                             <td>{{ $motor->plat_motor }}</td>
                             <td>
                                 <a href="{{ route('detailmotor', $motor->id) }}" class="btn btn-primary"><i class="bi bi-search"></i></a>
-                                <a href="{{ route('updateMotor', $motor->id) }}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
+                                <a href="{{ route('updatemotor', $motor->id) }}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
                                 <button class="btn btn-danger" onclick="confirmDelete({{ $motor->id }})"><i class="bi bi-trash3"></i></button>
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
+            <div class="btn-container">
+                <a href="{{ route('tambahmotor') }}" class="btn btn-success"> + Tambah Data</a>
+            </div>
         </div>
     </div>
 
