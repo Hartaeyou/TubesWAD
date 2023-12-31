@@ -19,12 +19,12 @@
         }
 
         .card-header {
-            background-color: #daecff;
+            background-color: #d1d1d1;
             color: #000000;
         }
 
         .card-body {
-            background-color: #f8f9fa;
+            background-color: #eeeeee;
         }
 
         .form-group label {

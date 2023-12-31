@@ -76,27 +76,49 @@
 
 @section('cssfile')
     <link rel="stylesheet" href="{{ URL('cssFile/cssTampilan.css') }}">
-    <!-- Add Bootstrap CSS link -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        #form {
+        .container {
             margin-top: 30px;
         }
 
-        /* Customize form styles */
-        .form-control {
-            width: 100%;
-            margin-bottom: 15px;
+        .card {
+            width: 400px;
+            margin: auto;
+            margin-top: 20px;
         }
 
-        /* Add styles for the submit button */
-        .btn-success {
-            background-color: #28a745;
-            color: #fff;
+        .card-header {
+            background-color: #d1d1d1;
+            color: #000000;
         }
 
-        .btn-success:hover {
-            background-color: #218838;
+        .card-body {
+            background-color: #eeeeee;
+        }
+
+        .form-group label {
+            text-align: left;
+            margin-bottom: 0;
+        }
+
+        .form-group input {
+            margin-top: 0;
+        }
+
+        .btn-back {
+            margin-top: 20px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .btn-container button,
+        .btn-container a {
+            width: 48%;
         }
     </style>
 @endsection
@@ -145,7 +167,7 @@
                             </div>
                         </div>
                         <div class="btn-container">
-                            <button class="btn btn-success" type="submit" style="margin-top: 20px;">Simpan</button>
+                            <button class="btn btn-success" type="submit">Simpan</button>
                             <a href="{{ route('motor') }}" class="btn btn-danger">Batal</a>
                         </div>
                     </form>
