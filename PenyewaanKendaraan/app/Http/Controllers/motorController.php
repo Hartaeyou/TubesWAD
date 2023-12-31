@@ -7,17 +7,13 @@ use Illuminate\Http\Request;
 
 class motorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         return view('motor\tampilanmotor');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function tambah()
     {
         return view('motor\tambahmotor');
@@ -25,8 +21,7 @@ class motorController extends Controller
 
     public function list()
     {
-        $motors = Motor::all(); // Fetch all motors
-    
+        $motors = Motor::all();
         return view('motor\listmotor', ['motors' => $motors]);
     }
 
@@ -35,23 +30,7 @@ class motorController extends Controller
         return view('motor\detailmotor');
     }
 
-    // public function data(Request $request)
-    // {
-    //     $data = $request->all();
 
-    //     Showroom::create([
-    //         'nama_mobil' => $data['name'],
-    //         'brand_mobil' => $data['brand'],
-    //         'warna_mobil' => $data['warna'],
-    //         'tipe_mobil' => $data['tipe'],
-    //         'harga_mobil' => $data['harga']
-    //     ]);
-
-    //     return redirect(route('mobil.index'));
-    // }
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $validate = $request->validate([
@@ -61,51 +40,69 @@ class motorController extends Controller
             'plat' => 'required',
         ]);
     
-        Motor::create([
+        $data=Motor::create([
             'nama_motor' => $request->nama,
             'brand_motor' => $request->brand,
             'warna_motor' => $request->warna,
             'plat_motor' => $request->plat,
-            'mitra_motor' => $request->mitra_motor ?? '', // Provide a default value if not present
-            // 'mitra_motor' => $request->mitra_motor, // Provide a value here
-            // 'status' => 'active', // Or any default value for 'status' field
+            'mitra_motor' => $request->mitra_motor ?? '',
         ]);
-        $successMessage = 'Data berhasil disimpan';
-        return redirect()->route('motor')->with('success', $successMessage);
 
-        // return redirect()->route('tambahmotor')->with('success', 'Data berhasil disimpan');
+        if ($data){
+            return redirect()->route('motor')->with('success', 'Data berhasil disimpan');
+        }else{
+            return back();
+        }
+        
     }    
 
+    public function update($id)
+    {
+        $motor = Motor::find($id);
+    
+        if (!$motor) {
+            return redirect()->route('listmotor')->with('error', 'Data not found');
+        }
+    
+        return view('motor.updatemotor', compact('motor'));
+    }
+    
+    public function updateMotor(Request $request, $id)
+    {
+        $request->validate([
+            'nama' => 'required',
+            'brand' => 'required',
+            'warna' => 'required',
+            'plat' => 'required',
+        ]);
+    
+        $motor = Motor::find($id);
+    
+        if (!$motor) {
+            return redirect()->route('listmotor')->with('error', 'Data not found');
+        }
+    
+        $motor->update([
+            'nama_motor' => $request->nama,
+            'brand_motor' => $request->brand,
+            'warna_motor' => $request->warna,
+            'plat_motor' => $request->plat,
+        ]);
+    
+        return redirect()->route('listmotor')->with('success', 'Data Telah Terganti');
+    }
 
-    // /**
-    //  * Display the specified resource.
-    //  */
-    // public function show(Motor $motor)
-    // {
-    //     //
-    // }
+    public function delete($id)
+    {
+        $motor = Motor::find($id);
 
-    // /**
-    //  * Show the form for editing the specified resource.
-    //  */
-    // public function edit(Motor $motor)
-    // {
-    //     //
-    // }
+        if (!$motor) {
+            return response()->json(['error' => 'Data not found'], 404);
+        }
 
-    // /**
-    //  * Update the specified resource in storage.
-    //  */
-    // public function update(Request $request, Motor $motor)
-    // {
-    //     //
-    // }
+        $motor->delete();
 
-    // /**
-    //  * Remove the specified resource from storage.
-    //  */
-    // public function destroy(Motor $motor)
-    // {
-    //     //
-    // }
+        return response()->json(['success' => 'Data berhasil dihapus']);
+
+    }
 }
