@@ -1,77 +1,96 @@
 @extends('layout.main')
 
-<script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" integrity="sha512-gOQQLjHRpD3/SEOtalVq50iDn4opLVup2TF8c4QPI3/NmUPNZOk2FG0ihi8oCU/qYEsw4P6nuEZT2lAG0UNYaw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 @section('cssfile')
     <link rel="stylesheet" href="{{ URL('cssFile/cssTampilan.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
     <style>
-        #form {
-            margin-top: 30px;
+        .card {
+            display: flex;
+            width: 800px;
+            margin: auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background-color: #fff;
         }
 
-        .form-control {
-            width: 400px;
-            margin-bottom: 20px;
+        .form-container {
+            flex: 1;
+            padding-right: 20px;
         }
-        
+
+        .card-img-top {
+            max-width: 100%;
+            height: auto;
+            max-width: 300px;
+            border-radius: 10px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .btn-container button,
+        .btn-container a {
+            width: 48%;
+        }
     </style>
 @endsection
 
 @section('content')
-    <section id="form">
-        @if ($errors->any())
-            @foreach ($errors->all() as $error)
-                <p class="alert alert-danger">{{ $error }}</p>
-            @endforeach
-        @endif
-
-        <div class="container">
-           <div class="d-flex flex-column align-items-center gap-5">
-                <div style="width: 900px; text-align: center;">
-                    <h1 style="font-weight: bold; margin-top: 30px;">Tambah Data Motor</h1>
+    <div class="container">
+        <div class="card">
+            <div class="form-container">
+                <div style="text-align: center;">
+                    <h2 style="font-weight: bold; margin-top: 20px; margin-bottom: 30px">Tambah Data Motor</h2>
                 </div>
-                <div>
-                    <form class="form-control" action="{{ route('motor.store') }}" method="POST" enctype="multipart/form-data" >
-                        @csrf
-                        <div class="form-group">
-                            <label for="inputNama">Nama Motor</label>
-                            <div class="col-sm-10 mt-2">
+                <table>
+                    <th>
+                        <form action="{{ route('motor.store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="form-group">
+                                <label for="inputNama">Nama Motor</label>
                                 <input class="form-control" id="inputNama" name="nama" type="text" required placeholder="Masukkan Nama Motor">
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="inputBrand">Brand Motor</label>
-                            <div class="col-sm-10 mt-2">
+                            <div class="form-group">
+                                <label for="inputBrand">Brand Motor</label>
                                 <input class="form-control" id="inputBrand" name="brand" type="text" required placeholder="Masukkan Merk Motor">
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="inputWarna">Warna Motor</label>
-                            <div class="col-sm-10 mt-2">
+                            <div class="form-group">
+                                <label for="inputWarna">Warna Motor</label>
                                 <input class="form-control" id="inputWarna" name="warna" type="text" required placeholder="Masukkan Warna Motor">
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="inputPlat">Plat Motor</label>
-                            <div class="col-sm-10 mt-2">
+                            <div class="form-group">
+                                <label for="inputPlat">Plat Motor</label>
                                 <input class="form-control" id="inputPlat" name="plat" type="text" required placeholder="Masukkan Plat Motor">
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-10 offset-sm-2">
-                                <button class="btn btn-primary" type="submit" style="margin-top: 20px;">Tambah</button>
+                            <div class="btn-container">
+                                <button class="btn btn-success" type="submit">Tambah</button>
+                                <a href="{{ route('motor') }}" class="btn btn-danger">Batal</a>
                             </div>
+                        </form>
+                    </th>
+                    <th>
+                        <div style="flex: 1; text-align: right;">
+                            <img src="{{ URL('img/logo.png') }}" class="card-img-top" alt="logo">
                         </div>
-                    </form>
-                </div>
+                    </th>
+                </table>
             </div>
         </div>
-    </section>
-    {{-- @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif --}}
+    </div>
 
+    @if(session('success'))
+        <script>
+            Swal.fire({
+                title: 'Success!',
+                text: '{{ session('success') }}',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 2000
+            });
+        </script>
+    @endif
 @endsection

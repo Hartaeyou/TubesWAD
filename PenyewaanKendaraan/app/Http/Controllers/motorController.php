@@ -105,4 +105,16 @@ class motorController extends Controller
         return response()->json(['success' => 'Data berhasil dihapus']);
 
     }
+
+    public function detailmotor($id)
+    {
+        $motor = Motor::find($id);
+
+        if (!$motor) {
+            return redirect()->route('listmotor')->with('error', 'Data not found');
+        }
+
+        return view('motor.detailmotor', ['motor' => $motor]);
+    }
+
 }
