@@ -19,6 +19,11 @@ class motorController extends Controller
         return view('motor.listmotor', ['motors' => $motors]);
     }
 
+    public function formtambah()
+    {
+        return view('motor.tambahmotor');
+    }
+
     public function store(Request $request)
     {
         $validate = $request->validate([
@@ -90,7 +95,6 @@ class motorController extends Controller
         $motor->delete();
 
         return response()->json(['success' => 'Data berhasil dihapus']);
-
     }
 
     public function detailmotor($id)

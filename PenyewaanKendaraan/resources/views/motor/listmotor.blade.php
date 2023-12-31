@@ -66,7 +66,9 @@
                         },
                         success: function (response) {
                             if (response.success) {
-                                Swal.fire('Terhapus!', 'Data telah dihapus.', 'success');
+                                Swal.fire('Terhapus!', 'Data telah dihapus.', 'success').then(() => {
+                                    location.reload();
+                                });
                             } else {
                                 Swal.fire('Gagal!', 'Gagal menghapus data.', 'error');
                             }

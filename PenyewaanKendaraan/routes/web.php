@@ -26,12 +26,13 @@ use App\Http\Controllers\MitraController;
 
 // devi
 Route::get('/motor', [motorController::class, 'index'])->name('motor')->middleware("islogIn");
+Route::get('/tambahmotor', [motorController::class, 'formtambah'])->name('tambahmotor')->middleware("islogIn");
 Route::post('/tambahmotor', [motorController::class, 'store'])->name('tambahmotor')->middleware("islogIn");
-Route::get('/listmotor', [MotorController::class, 'list'])->name('listmotor')->middleware("islogIn");
-Route::get('/updatemotor/{id}', [MotorController::class, 'update'])->name('updatemotor')->middleware("islogIn");
-Route::post('/updatemotor/{id}', [MotorController::class, 'updatemotor'])->name('updatemotor')->middleware("islogIn");
-Route::delete('/deletemotor/{id}', [MotorController::class, 'delete'])->name('deleteMotor')->middleware("islogIn");
-Route::get('/detailmotor/{id}', [MotorController::class, 'detailmotor'])->name('detailmotor')->middleware("islogIn");
+Route::get('/listmotor', [motorController::class, 'list'])->name('listmotor')->middleware("islogIn");
+Route::get('/updatemotor/{id}', [motorController::class, 'update'])->name('updatemotor')->middleware("islogIn");
+Route::post('/updatemotor/{id}', [motorController::class, 'updatemotor'])->name('updatemotor')->middleware("islogIn");
+Route::delete('/deletemotor/{id}', [motorController::class, 'delete'])->name('deleteMotor')->middleware("islogIn");
+Route::get('/detailmotor/{id}', [motorController::class, 'detailmotor'])->name('detailmotor')->middleware("islogIn");
 
 // dasheva
 Route::get('/mobil', [mobilcontroller::class,'index'])->name('mobil')->middleware("islogIn");
