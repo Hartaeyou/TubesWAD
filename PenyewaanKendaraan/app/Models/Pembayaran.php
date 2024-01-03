@@ -1,32 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Models;
 
-use Illuminate\Http\Request;
-use App\Models\Pemesanan;
+use Illuminate\Database\Eloquent\Model;
 
-class PembayaranController extends Controller
+class Pembayaran extends Model
 {
-    public function index() {
-        $pemesanans = Pemesanan::all();
+    protected $fillable = ['pemesanan_id', 'amount', 'status'];
 
-        return view('pembayaran.tampilanPembayaran', compact('pemesanans'));
-    }
-
-    public function lunaskan($id) {
-        $pemesanan = Pemesanan::findOrFail($id);
-        $pemesanan->update(['pembayaran' => 'Lunas']);
-
-        return redirect()->route('tempatPembayaran');
-    }
-
-    public function processPayment($id) {
-        $order = Pemesanan::findOrFail($id);
-
-        if ($order->pembayaran !== 'Lunas') {
-            return back()->with('error', 'The order is not marked as paid.');
-        }
-    
-        return view('pembayaran.receipt', compact('order'));
+    public function pemesanan() {
+        return $this->belongsTo(Pemesanan::class);
     }
 }
